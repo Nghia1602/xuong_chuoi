@@ -1,0 +1,101 @@
+/* .submenuxuong {
+  display: none;
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+.submenuxuong:hover #xuong {
+  display: block;
+}
+.xuong{
+    position: relative;
+} */
+.xuong:hover .submenuxuong {
+  display: block;
+}
+.submenuxuong {
+  display: none;
+}
+.xuong::before {
+  content: "";
+  height: 50px;
+  width: 100%;
+  top: 20px;
+  position: absolute;
+  background: transparent;
+}
+.vung_snoul::before {
+  content: "";
+  top: 0px;
+  height: 35px;
+  width: 100%;
+  left: 90px;
+  position: absolute;
+  background: transparent;
+  /* pointer-events: auto; */
+}
+
+.sub_vung_snoul {
+  display: none;
+}
+.vung_snoul:hover {
+  background-color: rgba(127, 255, 212, 0.473);
+  color: "green";
+}
+.vung_snoul:hover .sub_vung_snoul {
+  display: block;
+}
+.sub_bp1-1{
+    display: none;
+}
+.xuongbp1-1:hover .sub_bp1-1{
+    display: block;
+}
+
+.xuongbp1-1::before{
+    content: "";
+    height: 35px;
+    width: 100%;
+    top: 0px;
+    left: 90px;
+    position: absolute;
+background: transparent;
+}
+
+
+/* ------------------------------------------------- */
+.xuong .submenuxuong>div:hover {
+  background-color: rgba(234, 236, 236, 0.5);
+  color: green;
+  border: 1.5px solid green;
+  border-radius: 4px;
+}
+/* Hover vào mục cấp 1 như 'Giám sát chung' */
+
+/* Hover vào mục cấp 1 có submenu như 'Vùng Snoul' */
+.submenuxuong .vung_snoul:hover {
+  background-color: rgba(234, 236, 236, 0.5);
+  color: green;
+  border: 1.5px solid green;
+  border-radius: 4px;
+}
+
+/* Hover vào mục cấp 2 bên trong submenu 'sub_vung_snoul' */
+.submenuxuong .sub_vung_snoul > div:hover {
+  background-color: rgba(234, 236, 236, 0.5);
+  color: green;
+  border: 1.5px solid green;
+  border-radius: 4px;
+}
+.submenuxuong .sub_vung_snoul > div {
+  color: black; /* Đặt màu chữ mặc định để không bị kế thừa */
+}
+.submenuxuong .sub_vung_snoul .sub_bp1-1>div:hover{
+    background-color: rgba(234, 236, 236, 0.5);
+  color: green;
+  border: 1.5px solid green;
+  border-radius: 4px;
+}
