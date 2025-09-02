@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/header/header";
 import Tabs from "./components/tabs/tabs";
-import Content from "./components/content/content";
+import Content from "./components/page/giam_sat_chung/giamsatchung_xuongchuoi";
 import "./App.css";
 
 

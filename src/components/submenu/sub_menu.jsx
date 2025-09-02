@@ -14,7 +14,7 @@ const SubMenuXuong = (props) => {
         color: "black",
 
         boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
-        width: "150px",
+        width: "170px",
         zIndex: 1000,
       }}
     >
@@ -29,7 +29,8 @@ const SubMenuXuong = (props) => {
         className="vung_snoul"
         style={{ padding: "8px 12px", cursor: "pointer", position: "relative" }}
       >
-        Vùng Snoul
+        <span style={{marginRight:"42px"}}>Vùng snoul</span>
+        <i className="fa-solid fa-angle-right"></i>
         <div
           className="sub_vung_snoul"
           style={{
@@ -38,12 +39,12 @@ const SubMenuXuong = (props) => {
             left: "105%",
             background: "white",
             boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
-            width: "150px",
+            width: "170px",
             borderRadius: "8px",
           }}
         >
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-            Giám sát chung
+                       <span style={{marginRight:"25px"}}>Giám sát chung</span>
           </div>
           <div
             className="xuongbp1-1"
@@ -53,20 +54,21 @@ const SubMenuXuong = (props) => {
               position: "relative",
             }}
           >
-            <span>Xưởng BP1-1</span>
-            <RightOutlined />
+            <span style={{marginRight:"25px"}}>Xưởng BP1-1</span>
+            <i className="fa-solid fa-angle-right"></i>
             <div
               className="sub_bp1-1"
               style={{
                 position: "absolute",
                 left: "105%",
                 top: "-35px",
-                width: "150px",
+                width: "170px",
                 background: "white",
                 boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
                 borderRadius: "8px",
                 zIndex: 1000,
                 color: "black",
+                paddingLeft: "10px"
               }}
             >
               <div style={{ padding: "8px 12px", cursor: "pointer" }}>
@@ -76,7 +78,7 @@ const SubMenuXuong = (props) => {
                 Khu trạm chờ
               </div>
               <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-                khu đóng gói
+                Khu đóng gói
               </div>
               <div style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Kho mát
@@ -90,21 +92,34 @@ const SubMenuXuong = (props) => {
             </div>
           </div>
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-            Xưởng BP1-2
+            
+            <span style={{marginRight:"25px"}}>Xưởng BP1-2</span>
+            <i className="fa-solid fa-angle-right"></i>
           </div>
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-            Xưởng BP2
+           
+            <span style={{marginRight:"39px"}}>Xưởng BP2</span>
+            <i className="fa-solid fa-angle-right"></i>
           </div>
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-            Xưởng ER1-1
+            
+            <span style={{marginRight:"25px"}}>Xưởng ER1-1</span>
+            <i className="fa-solid fa-angle-right"></i>
           </div>
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>
-            Xưởng ER1-2
+            <span style={{marginRight:"25px"}}>Xưởng ER1-2</span>
+            <i className="fa-solid fa-angle-right"></i>
           </div>
         </div>
       </div>
-      <div style={{ padding: "8px 12px", cursor: "pointer" }}>Vùng Kounmon</div>
-      <div style={{ padding: "8px 12px", cursor: "pointer" }}>Vùng Lào</div>
+      <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+        
+        <span style={{marginRight:"13px"}}>Vùng Kounmon</span>
+<i className="fa-solid fa-angle-right"></i>
+      </div>
+      <div style={{ padding: "8px 12px", cursor: "pointer" }}><span style={{marginRight:"54px"}}>Vùng Lào</span>
+        <i className="fa-solid fa-angle-right"></i>
+      </div>
     </div>
   );
 };
