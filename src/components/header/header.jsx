@@ -8,26 +8,26 @@ const Header = (props) => {
     <div
       style={{
         background: "#398640",
-        height: "70px",
+        height: "7.35%",
         display: "flex",
-        width: "1920px",
+        width: "100%",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", width: "285px" }}>
+      <div style={{ display: "flex", alignItems: "center", width: "14.8%" }}>
         <div
           style={{
-            width: "274px",
-            height: "54px",
+            width: "96%",
+            height: "77%",
             display: "flex",
             alignItems: "center",
-            paddingLeft: "10px",
+            paddingLeft: "0.625rem",
           }}
         >
           <img
             src="/images/logo_agri.png"
             style={{
-              width: "274px",
-              height: "28px",
+              width: "100%",
+              height: "52%",
             }}
           />
         </div>
@@ -35,41 +35,44 @@ const Header = (props) => {
       {/* thanh giữa */}
       <div
         style={{
-          width: "1400px",
-          height: "70px",
+          width: "73%",
+          height: "100%",
           display: "flex",
           justifyContent: "center",
         }}
       >
         <div
           style={{
-            width: "1165px",
-            height: "70px",
+            width: "83.2%",
+            height: "100%",
           }}
         >
           {/* ------------Thông tin liên hệ------------ */}
           <div
             style={{
-              width: "1165px",
-              height: "30px",
+              width: "100%",
+              height: "42.85%",
               background: "white",
-              borderRadius: "0 0 16px 16px",
+              borderRadius: "0 0 1rem 1rem",
               display: "flex",
             }}
           >
             <div
               style={{
-                width: "582.5px",
+                // width: "50%",
+                height: "100%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "end",
-                marginRight: "80px",
+                marginRight: "5rem",
+                paddingLeft: "10rem",
               }}
             >
               <div
                 style={{
-                  width: "28px",
-                  height: "28px",
+                  // width: "15%",
+                  height: "70%",
+                  aspectRatio: "1 / 1",
                   borderRadius: "50%",
                   background: "#c6c6c670",
                   display: "flex",
@@ -79,8 +82,9 @@ const Header = (props) => {
               >
                 <div
                   style={{
-                    width: "20px",
-                    height: "20px",
+                    // width: "20px",
+                    aspectRatio: "1/ 1",
+                    height: "71%",
                     borderRadius: "50%",
                     background: "white",
                     display: "flex",
@@ -92,26 +96,26 @@ const Header = (props) => {
                     className="fa-solid fa-phone-volume"
                     style={{
                       color: "green",
-                      marginRight: "2px",
+                      marginRight: "0.125rem",
                       borderRadius: "50%",
-                      fontSize: "12px",
+                      // height:"80%",
                     }}
                   ></i>
                 </div>
               </div>
 
               {/* <i class="fa-regular fa-phone-volume"></i> */}
-              <span style={{ marginLeft: "10px" }}>
+              <span style={{ marginLeft: "0.625rem", fontSize: "1rem" }}>
                 Hỗ trợ dịch vụ:
                 <strong style={{ color: "green" }}> 0xxx xxx xxx</strong>
               </span>
             </div>
             <div
               style={{
-                width: "582.5px",
+                // width: "582.5px",
                 display: "flex",
                 alignItems: "center",
-                gap: "4px",
+                gap: "0.25rem",
               }}
             >
               Hotline báo cháy:{" "}
@@ -124,8 +128,8 @@ const Header = (props) => {
           {/* ---------------thanh menu + tài khoản-------------- */}
           <div
             style={{
-              width: "1165px",
-              height: "40px",
+              width: "100%",
+              height: "57.15%",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -136,30 +140,31 @@ const Header = (props) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                height: "40px",
-                gap: "16px",
-                fontSize: "16px",
+                height: "100%",
+                gap: "1rem",
+                fontSize: "1rem",
                 color: "white",
                 fontFamily: "'Be Vietnam Pro', sans-serif",
                 position: "relative",
               }}
             >
               <div>Trang chủ</div>
-              <div className="xuong" style={{ position: "relative" }}>Xưởng <SubMenuXuong/>
+              <div className="xuong" style={{ position: "relative" }}>
+                Xưởng <SubMenuXuong />
               </div>
-              
+
               <div>Hướng dẫn sử dụng</div>
               <div>Liên hệ</div>
             </div>
 
             {/* ---------------Tài khoản------------------- */}
-            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", height:"100%" }}>
               <div
                 style={{
                   background: "#c6c6c670",
                   borderRadius: "50%",
-                  width: "28px",
-                  height: "28px",
+                  aspectRatio: "1/ 1",
+                  height: "70%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -169,8 +174,8 @@ const Header = (props) => {
                   style={{
                     background: "white",
                     borderRadius: "50%",
-                    width: "20px",
-                    height: "20px",
+                    aspectRatio: "1/ 1",
+                    height: "71%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
@@ -178,7 +183,7 @@ const Header = (props) => {
                 >
                   <img
                     src="/images/vietnam.png"
-                    style={{ width: "16px", height: "16px" }}
+                    style={{ aspectRatio: "1/ 1", height: "90%" }}
                     alt="Lá cờ Việt Nam"
                   />
                 </div>
@@ -187,8 +192,8 @@ const Header = (props) => {
                 style={{
                   background: "#c6c6c670",
                   borderRadius: "50%",
-                  width: "28px",
-                  height: "28px",
+                  aspectRatio: "1/ 1",
+                  height: "70%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -198,8 +203,9 @@ const Header = (props) => {
                   style={{
                     background: "white",
                     borderRadius: "50%",
-                    width: "20px",
-                    height: "20px",
+                    // width: "20px",
+                    aspectRatio: "1/ 1",
+                    height: "71%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
@@ -207,12 +213,12 @@ const Header = (props) => {
                 >
                   <i
                     className="fa-regular fa-bell"
-                    style={{ fontSize: "16px", color: "green" }}
+                    style={{ fontSize: "80%", color: "green" }}
                   ></i>
                 </div>
               </div>
               <div
-                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem" , height:"100%"}}
               >
                 <div
                   style={{
@@ -226,8 +232,8 @@ const Header = (props) => {
                   style={{
                     background: "#c6c6c669",
                     borderRadius: "50%",
-                    width: "28px",
-                    height: "28px",
+                    aspectRatio: "1/ 1",
+                    height: "70%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
@@ -237,8 +243,8 @@ const Header = (props) => {
                     style={{
                       background: "white",
                       borderRadius: "50%",
-                      width: "20px",
-                      height: "20px",
+                      aspectRatio: "1/ 1",
+                      height: "71%",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -246,7 +252,7 @@ const Header = (props) => {
                   >
                     <i
                       className="fa-regular fa-user"
-                      style={{ color: "green", fontSize: "14px" }}
+                      style={{ color: "green", fontSize: "70%" }}
                     ></i>
                   </div>
                 </div>
@@ -259,12 +265,12 @@ const Header = (props) => {
         style={{ width: "1165px", height: "70px", background: "white" }}
       ></div> */}
       {/* VÙng */}
-      <div style={{ width: "235px", height: "70px" }}>
+      <div style={{ width: "12.24%", height: "77%" }}>
         <div
           style={{
-            width: "212px",
-            height: "70px",
-            fontSize: "16px",
+            width: "90.2%",
+            height: "100%",
+            fontSize: "1rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
