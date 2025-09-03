@@ -3,11 +3,12 @@ import React from "react";
 import DonutChart from "../../content/donutchart";
 import HarvestBarChart from "./barchart_giamsatchung";
 import Khudonggoi_gsc from "./khudonggoi_gsc";
+import Khomat_gsc from "./khomat_gsc";
 const GiamSatChung = (props) => {
   return (
     <div
       style={{
-        width: "1920px",
+        width: "100px",
         height: "847px",
         border: "1px solid red",
         display: "flex",
@@ -320,15 +321,7 @@ const GiamSatChung = (props) => {
           marginBottom: "15px",
         }}
       >
-        <div
-          style={{
-            width: "1888px",
-            height: "35px",
-            background: "#14141411",
-            borderRadius: "5px 5px 0 0",
-          }}
-        ></div>
-        <div></div>
+        <Khomat_gsc/>
       </div>
     </div>
   );

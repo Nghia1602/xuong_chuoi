@@ -1,4 +1,6 @@
 import React from "react";
+import Barchart_thongke from "./barchart_thongke";
+import "/images/japan.png";
 
 const Khudonggoi_gsc = (props) => {
   return (
@@ -26,18 +28,20 @@ const Khudonggoi_gsc = (props) => {
           //   justifyContent:"space-between",
           fontSize: 14,
           fontFamily: "'Be Vietnam Pro', sans-serif",
-          gap: 1,
-          border: "1px solid red",
+          // gap: 5,
         }}
       >
         <div
           style={{
             width: 623,
             height: 218,
-            border: "1px solid red",
+            // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent:"center",
+            borderRight: "1px solid #c6c6c670",
+            boxSizing: "border-box",
           }}
         >
           <div
@@ -61,7 +65,16 @@ const Khudonggoi_gsc = (props) => {
               justifyContent: "center",
             }}
           >
-            <div style={{ width: 340, height: "100%", gap: "2px" }}>
+            <div
+              style={{
+                width: 340,
+                height: "100%",
+                gap: "5px",
+                display: "flex",
+                flexDirection: "column",
+                // borderRight: "1px solid #c6c6c670",
+              }}
+            >
               <div
                 style={{
                   width: 324,
@@ -90,7 +103,7 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    1990
+                    3110
                   </div>
                   <div
                     style={{
@@ -140,7 +153,7 @@ const Khudonggoi_gsc = (props) => {
                     justifyContent: "center",
                   }}
                 >
-                  <div style={{ width: "164px" }}>Tổng thùng (thực tế)</div>
+                  <div style={{ width: "164px" }}>Chênh lệch</div>
                   <div
                     style={{
                       width: "80px",
@@ -184,21 +197,95 @@ const Khudonggoi_gsc = (props) => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    
+                    background: "#5A9CCA",
+                    borderRadius: "4px",
+                    color: "#ffff",
                   }}
                 >
-                  <div style={{ width: 80, height: 29 }}>Thùng đạt</div>
-                  <div style={{ width: 70, height: 29 }}>3000</div>
+                  <div
+                    style={{
+                      width: 80,
+                      height: 29,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRight: "1px solid #ffff",
+                    }}
+                  >
+                    Thùng đạt
+                  </div>
+                  <div
+                    style={{
+                      width: 70,
+                      height: 29,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    3000
+                  </div>
                 </div>
-                <div style={{ width: 158, height: 33 }}></div>
+                <div
+                  style={{
+                    width: 158,
+                    height: 33,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "4px",
+                    color: "#EB1010",
+                    border: "1px solid #EB1010",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 80,
+                      height: 29,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRight: "1px solid #EB1010",
+                    }}
+                  >
+                    Thùng lỗi
+                  </div>
+                  <div
+                    style={{
+                      width: 70,
+                      height: 29,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    56
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              style={{ width: 240, height: "100%", border: "1px solid red" }}
-            ></div>
+            <div style={{ width: 240, height: "100%" }}>
+              <Barchart_thongke />
+            </div>
           </div>
         </div>
-        <div style={{ width: 623, height: 218 }}>
+        {/* ----------------------Nhật Bản ----------------- */}
+
+        {/* ----------------------Nhật Bản ----------------- */}
+        <div
+          style={{
+            width: 623,
+            height: 218,
+            borderRight: "1px solid #c6c6c670",
+            boxSizing: "border-box",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <div
             style={{
               width: 590,
@@ -212,10 +299,314 @@ const Khudonggoi_gsc = (props) => {
             Số thùng chuối Nhật Bản (theo phẩm cấp)
           </div>
           <div
-            style={{ width: 590, height: 192, border: "1px solid red" }}
-          ></div>
+            style={{
+              width: 590,
+              height: 192,
+              // border: "1px solid red",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "6px",
+            }}
+          >
+            <div
+              style={{
+                width: "590px",
+                height: 19,
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+              }}
+            >
+              <div style={{ width: 27, height: 19 }}>
+                <img
+                  src="/images/japan.png"
+                  alt="Nhật Bản"
+                  style={{ height: 19 }}
+                />
+              </div>
+              <div
+                style={{
+                  width: 81,
+                  height: 19,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Tổng: <strong style={{ marginLeft: 5 }}>1056</strong>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "590px",
+                height: 149,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 9,
+              }}
+            >
+              {/* ---------------------------------------
+              -------------------------------------------
+              -------------------Số liệu Nhật Bản-----------------
+              ------------------------------------------
+              ----------------------------------------
+              -------------------------------------------- */}
+
+              {/* ++++++++++++++++++++++++SL1++++++++++++++++++++++++++++ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  28CP (13kg)
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+
+              {/* ----------------------------SỐ LIỆU 2------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  28CP (18kg)
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 3------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  30CP (13kg)
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 4------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  26CP
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 5------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  35CP
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 6------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+                  flexBasis: "100%",
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  40CP
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div style={{ width: 623, height: 218 }}>
+        {/* ----------------------Trung Quốc ----------------- */}
+
+        {/* ----------------------Trung Quốc ----------------- */}
+        <div style={{ width: 623, height: 218 , display:'flex', flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
           <div
             style={{
               width: 590,
@@ -228,7 +619,310 @@ const Khudonggoi_gsc = (props) => {
           >
             Số thùng chuối Trung Quốc (theo phẩm cấp)
           </div>
-          <div style={{ width: 590, height: 192 }}></div>
+          <div
+            style={{
+              width: 590,
+              height: 192,
+              // border: "1px solid red",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "6px",
+            }}
+          >
+            <div
+              style={{
+                width: "590px",
+                height: 19,
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+              }}
+            >
+              <div style={{ width: 27, height: 19 }}>
+                <img
+                  src="/images/china.png"
+                  alt="Trung Quốc"
+                  style={{ height: 19 }}
+                />
+              </div>
+              <div
+                style={{
+                  width: 81,
+                  height: 19,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Tổng: <strong style={{ marginLeft: 5 }}>2000</strong>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "590px",
+                height: 149,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 9,
+              }}
+            >
+              {/* ---------------------------------------
+              -------------------------------------------
+              -------------------Số liệu Trung Quốc-----------------
+              ------------------------------------------
+              ----------------------------------------
+              -------------------------------------------- */}
+
+              {/* ++++++++++++++++++++++++SL1++++++++++++++++++++++++++++ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  A456
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  350
+                </div>
+              </div>
+
+              {/* ----------------------------SỐ LIỆU 2------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  A789
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  300
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 3------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  B456
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  350
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 4------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  B789
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  300
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 5------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  CL
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  350
+                </div>
+              </div>
+              {/* ----------------------------SỐ LIỆU 6------------------------------ */}
+              <div
+                style={{
+                  width: 110,
+                  height: 72.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  // border: "0 1px 1px 1px solid #DADADA",
+                  borderRadius: 4,
+                  flexBasis: "100%",
+                  // marginLeft: 6,
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    height: 26,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#DADADA",
+                    borderRadius: "4px 4px 0 0",
+                  }}
+                >
+                  CP
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 46.5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: " 1px solid #DADADA",
+                    boxSizing: "border-box",
+                    borderRadius: "0 0 4px 4px ",
+                  }}
+                >
+                  176
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
