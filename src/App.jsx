@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div style={{ width: "100vw",height: "100vh", border: "0.0625rem solid green" }}>
+      <div style={{ width: "98.7vw",height: "98.1vh", border: "0.0625rem solid green" }}>
         <Header style={{ }} />
         <Tabs />
         <Content />

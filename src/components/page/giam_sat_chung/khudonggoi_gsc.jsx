@@ -4,10 +4,10 @@ import "/images/japan.png";
 
 const Khudonggoi_gsc = (props) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div
         style={{
-          height: "35px",
+          height: "13.4%", //35px
           background: "#14141411",
           borderRadius: "5px 5px 0 0",
           display: "flex",
@@ -21,8 +21,8 @@ const Khudonggoi_gsc = (props) => {
       </div>
       <div
         style={{
-          height: "226px",
-          width: "1888px",
+          height: "86.6%", //226px
+          width: "100%", //1888px
           display: "flex",
           alignItems: "center",
           //   justifyContent:"space-between",
@@ -33,21 +33,22 @@ const Khudonggoi_gsc = (props) => {
       >
         <div
           style={{
-            width: 623,
-            height: 218,
+            // width: 623,//623px
+            height: "96%",//218px
+            flex: 1,
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent:"center",
+            // justifyContent: "center", 
             borderRight: "1px solid #c6c6c670",
             boxSizing: "border-box",
           }}
         >
           <div
             style={{
-              width: 590,
-              height: 26,
+              width: "94.7%",//590
+              height: "12%",//26
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -58,9 +59,10 @@ const Khudonggoi_gsc = (props) => {
           </div>
           <div
             style={{
-              width: 590,
-              height: 192,
+              width: "94.7%",//590
+              height: "88%",//192px
               display: "flex",
+              alignItems:"center",
 
               justifyContent: "center",
             }}
@@ -71,7 +73,7 @@ const Khudonggoi_gsc = (props) => {
                 height: "100%",
                 gap: "5px",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "column",alignItems:"center", justifyContent:"center"
                 // borderRight: "1px solid #c6c6c670",
               }}
             >
@@ -266,7 +268,7 @@ const Khudonggoi_gsc = (props) => {
                 </div>
               </div>
             </div>
-            <div style={{ width: 240, height: "100%" }}>
+            <div style={{ width: "40.67%", height: "100%" }}>
               <Barchart_thongke />
             </div>
           </div>
@@ -276,8 +278,9 @@ const Khudonggoi_gsc = (props) => {
         {/* ----------------------Nhật Bản ----------------- */}
         <div
           style={{
-            width: 623,
-            height: 218,
+            // width: 623,
+            height: "96%",//218px
+            flex: 1,
             borderRight: "1px solid #c6c6c670",
             boxSizing: "border-box",
             display: "flex",
@@ -606,7 +609,17 @@ const Khudonggoi_gsc = (props) => {
         {/* ----------------------Trung Quốc ----------------- */}
 
         {/* ----------------------Trung Quốc ----------------- */}
-        <div style={{ width: 623, height: 218 , display:'flex', flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+        <div
+          style={{
+            // width: 623,
+            flex:1,
+            height: "96%",//218px
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div
             style={{
               width: 590,

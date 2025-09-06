@@ -55,6 +55,7 @@ const Header = (props) => {
               background: "white",
               borderRadius: "0 0 1rem 1rem",
               display: "flex",
+              overflow:"hidden"
             }}
           >
             <div
@@ -71,7 +72,7 @@ const Header = (props) => {
               <div
                 style={{
                   // width: "15%",
-                  height: "70%",
+                  height: "85%",
                   aspectRatio: "1 / 1",
                   borderRadius: "50%",
                   background: "#c6c6c670",
@@ -90,14 +91,23 @@ const Header = (props) => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    overflow: "hidden",
                   }}
                 >
                   <i
                     className="fa-solid fa-phone-volume"
                     style={{
                       color: "green",
-                      marginRight: "0.125rem",
+                      // marginRight: "0.125rem",
                       borderRadius: "50%",
+                      aspectRatio: "1/ 1",
+                      fontSize: "0.7vw",
+                      lineHeight: 1, // ✅ Rất quan trọng để fix lệch dọc
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+
+                      // width: "1.04vw",
                       // height:"80%",
                     }}
                   ></i>
@@ -142,7 +152,7 @@ const Header = (props) => {
                 alignItems: "center",
                 height: "100%",
                 gap: "1rem",
-                fontSize: "1rem",
+                fontSize: "0.83vw",
                 color: "white",
                 fontFamily: "'Be Vietnam Pro', sans-serif",
                 position: "relative",
@@ -158,7 +168,14 @@ const Header = (props) => {
             </div>
 
             {/* ---------------Tài khoản------------------- */}
-            <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", height:"100%" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "1.25rem",
+                height: "100%",
+              }}
+            >
               <div
                 style={{
                   background: "#c6c6c670",
@@ -209,16 +226,29 @@ const Header = (props) => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    overflow: "hidden",
                   }}
                 >
                   <i
                     className="fa-regular fa-bell"
-                    style={{ fontSize: "80%", color: "green" }}
+                    style={{
+                      color: "green",
+                      fontSize: "0.7vw",
+                      lineHeight: 1,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                   ></i>
                 </div>
               </div>
               <div
-                style={{ display: "flex", alignItems: "center", gap: "0.5rem" , height:"100%"}}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  height: "100%",
+                }}
               >
                 <div
                   style={{
@@ -244,15 +274,27 @@ const Header = (props) => {
                       background: "white",
                       borderRadius: "50%",
                       aspectRatio: "1/ 1",
-                      height: "71%",
+                      // height: "71%",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      overflow: "hidden",
+
+                      height: "2.0vh",
                     }}
                   >
                     <i
                       className="fa-regular fa-user"
-                      style={{ color: "green", fontSize: "70%" }}
+                      style={{
+                        color: "green",
+                        lineHeight: 1,
+                        maxWidth: "100%",
+                        aspectRatio: "1/1",
+                        fontSize: "0.7vw",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     ></i>
                   </div>
                 </div>

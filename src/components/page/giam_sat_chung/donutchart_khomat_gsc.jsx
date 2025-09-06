@@ -24,7 +24,7 @@ const DonutChart_khomat_gsc = ({data}) => {
         alignItems: "center",
       }}
     >
-      <ResponsiveContainer width={400} height={185}>
+      <ResponsiveContainer width={400} height="92.5%">
         <PieChart>
           <Pie
             data={data}
