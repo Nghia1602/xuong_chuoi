@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-import DonutChart from "../../content/donutchart";
+import DonutChart from "./donutchart";
 import HarvestBarChart from "./barchart_giamsatchung";
 import Khudonggoi_gsc from "./khudonggoi_gsc";
 import Khomat_gsc from "./khomat_gsc";
@@ -10,7 +10,7 @@ const GiamSatChung = (props) => {
     <div
       style={{
         width: "100%",
-        height: "88.97%", //847px
+        height: "100%", //847px
         // border: "1px solid red",
         display: "flex",
         flexDirection: "column",
@@ -334,17 +334,17 @@ const GiamSatChung = (props) => {
         <Khudonggoi_gsc />
       </div>
       {/* -------------------Bảng 3--------------- */}
-      {/* <div
+      <div
         style={{
-          width: "1888px",
-          height: "261px",
+          width: "98.33%",//1888
+          height: "30.81%",//261
           borderRadius: "5px 5px 0 0",
           boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
           marginBottom: "15px",
         }}
       >
         <Khomat_gsc/>
-      </div> */}
+      </div>
     </div>
   );
 };

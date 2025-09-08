@@ -54,8 +54,8 @@ const Header = (props) => {
               height: "42.85%",
               background: "white",
               borderRadius: "0 0 1rem 1rem",
-              display: "flex",
-              overflow:"hidden"
+              display: "flex",justifyContent:"center",
+              overflow:"hidden", 
             }}
           >
             <div
@@ -63,10 +63,11 @@ const Header = (props) => {
                 // width: "50%",
                 height: "100%",
                 display: "flex",
+                flex:1,
                 alignItems: "center",
                 justifyContent: "end",
-                marginRight: "5rem",
-                paddingLeft: "10rem",
+                marginRight: "4rem",
+                // paddingLeft: "10rem",
               }}
             >
               <div
@@ -124,6 +125,7 @@ const Header = (props) => {
               style={{
                 // width: "582.5px",
                 display: "flex",
+                flex:1,
                 alignItems: "center",
                 gap: "0.25rem",
               }}

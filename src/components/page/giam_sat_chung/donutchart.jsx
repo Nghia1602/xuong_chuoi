@@ -56,21 +56,15 @@
 
 // export default DonutChart;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect, useRef } from "react";
-import { PieChart, Pie, Cell, Legend, ResponsiveContainer, Label } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  ResponsiveContainer,
+  Label,
+} from "recharts";
 
 const data = [
   { name: "Buồng đạt", value: 91.5 },
@@ -99,12 +93,29 @@ const DonutChart = () => {
     window.addEventListener("resize", updateRadius);
     return () => window.removeEventListener("resize", updateRadius);
   }, []);
-const renderLegend = (props) => {
+  const renderLegend = (props) => {
     const { payload } = props;
     return (
-      <ul style={{ listStyle: "none", margin: 0, padding: 0, fontSize: radius.inner * 0.2, color: "#333" }}>
+      <ul
+        style={{
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+          fontSize: radius.inner * 0.2,
+          color: "#333",
+        }}
+      >
         {payload.map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color, marginBottom: 4, display: "flex", alignItems: "center" , justifyContent:"center"}}>
+          <li
+            key={`item-${index}`}
+            style={{
+              color: entry.color,
+              marginBottom: 4,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <div
               style={{
                 width: 14,
@@ -135,7 +146,10 @@ const renderLegend = (props) => {
             dataKey="value"
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
             <Label
               value={`${data[0].value}%`}
@@ -144,14 +158,13 @@ const renderLegend = (props) => {
               fontSize={radius.inner * 0.25}
             />
           </Pie>
-          <Legend content={renderLegend}
-          
+          <Legend
+            content={renderLegend}
             payload={[
               {
                 value: "Buồng đạt",
                 type: "square",
                 color: "#2ecc71",
-                
               },
             ]}
           />

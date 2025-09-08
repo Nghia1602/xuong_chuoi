@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/header/header";
 import Tabs from "./components/tabs/tabs";
-import Content from "./components/page/giam_sat_chung/giamsatchung_xuongchuoi";
+import Content from "./components/content/content";
 import "./App.css";
 
 
@@ -11,8 +11,9 @@ function App() {
 
   return (
     <>
-      <div style={{ width: "98.7vw",height: "98.1vh", border: "0.0625rem solid green" }}>
+      <div style={{ width: "98.7vw",height: "98.9vh",display:"flex",justifyContent:"center", flexDirection:"column", }}>
         <Header style={{ }} />
+     
         <Tabs />
         <Content />
       </div>

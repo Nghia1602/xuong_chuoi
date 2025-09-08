@@ -291,8 +291,8 @@ const Khudonggoi_gsc = (props) => {
         >
           <div
             style={{
-              width: 590,
-              height: 26,
+              width: "94.7%",//590px
+              height: "12%",//26px
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -303,8 +303,8 @@ const Khudonggoi_gsc = (props) => {
           </div>
           <div
             style={{
-              width: 590,
-              height: 192,
+              width: "94.7%",//590px
+              height: "88%",//192px
               // border: "1px solid red",
               display: "flex",
               flexDirection: "column",
@@ -315,8 +315,8 @@ const Khudonggoi_gsc = (props) => {
           >
             <div
               style={{
-                width: "590px",
-                height: 19,
+                width: "100%",//590px
+                height: "9.8%",//19px
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
@@ -342,8 +342,8 @@ const Khudonggoi_gsc = (props) => {
             </div>
             <div
               style={{
-                width: "590px",
-                height: 149,
+                width: "100%",//590px
+                height: "77.6%",//149px
                 display: "flex",
                 flexWrap: "wrap",
                 gap: 9,
@@ -571,7 +571,7 @@ const Khudonggoi_gsc = (props) => {
                   flexDirection: "column",
                   // border: "0 1px 1px 1px solid #DADADA",
                   borderRadius: 4,
-                  flexBasis: "100%",
+                  // flexBasis: "100%",
                   // marginLeft: 6,
                 }}
               >
@@ -622,8 +622,8 @@ const Khudonggoi_gsc = (props) => {
         >
           <div
             style={{
-              width: 590,
-              height: 26,
+              width: "94.7%",//590px
+              height: "12%",//26px
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -634,8 +634,8 @@ const Khudonggoi_gsc = (props) => {
           </div>
           <div
             style={{
-              width: 590,
-              height: 192,
+              width: "94.7%",//590px
+              height: "88%",//192px
               // border: "1px solid red",
               display: "flex",
               flexDirection: "column",
@@ -646,8 +646,8 @@ const Khudonggoi_gsc = (props) => {
           >
             <div
               style={{
-                width: "590px",
-                height: 19,
+                width: "100%",//590px
+                height: "9.8%",//59px
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
@@ -673,8 +673,8 @@ const Khudonggoi_gsc = (props) => {
             </div>
             <div
               style={{
-                width: "590px",
-                height: 149,
+                width: "100%",//590px
+                height: "77.6%",//149px
                 display: "flex",
                 flexWrap: "wrap",
                 gap: 9,
@@ -902,7 +902,7 @@ const Khudonggoi_gsc = (props) => {
                   flexDirection: "column",
                   // border: "0 1px 1px 1px solid #DADADA",
                   borderRadius: 4,
-                  flexBasis: "100%",
+                  // flexBasis: "100%",
                   // marginLeft: 6,
                 }}
               >
