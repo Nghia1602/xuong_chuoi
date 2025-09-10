@@ -1,5 +1,28 @@
-import React, { useState } from "react";
-const data = {
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import 'antd/dist/reset.css';
+const { createRoot } = ReactDOM;
+import { Table, Tag, Space } from 'antd';
+
+// === STEP 1: Define Columns ===
+const columns = [
+  {
+    title: 'Tên chỉ số',
+    dataIndex: 'name',
+    key: 'name',
+    fixed: 'left',
+  },
+  ...Array.from({ length: 12 }, (_, i) => ({
+    title: `Tháng ${i + 1}`,
+    dataIndex: `${i + 1}`,
+    key: `${i + 1}`,
+    align: 'center',
+  })),
+];
+
+// === STEP 2: Raw Data ===
+const rawData = {
   headers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   rows: [
     {
@@ -19,51 +42,40 @@ const data = {
     },
     {
       name: "Khối lượng (tấn)",
-      value: [10.7, 9.81, 11.38, 9.68, 12.45, 9.74, 9.32, 12.5, 10.46, 13.00, 13.10, 9.87],
+      value: [
+        10.7, 9.81, 11.38, 9.68, 12.45, 9.74, 9.32, 12.5, 10.46, 13.0, 13.1,
+        9.87,
+      ],
       color: "bg-[#6A8FD8]",
     },
     {
       name: "Năng suất (kg/buồng)",
-      value: [35.2, 33.5, 34.9, 32.8, 36.1, 34.4, 33.9, 35.5, 32.7, 36.3, 33.6, 34.74], 
+      value: [
+        35.2, 33.5, 34.9, 32.8, 36.1, 34.4, 33.9, 35.5, 32.7, 36.3, 33.6, 34.74,
+      ],
       color: "bg-[#5A9CCA]",
     },
   ],
 };
-const TableData = (props) => {
-    
-  return (
-    <div className="w-[100%] h-[100%] flex flex-col justify-center items-center font-be-vietnam-pro text-[0.875rem]">
-      <div className=" w-full flex-[1]">
-        <table className="w-[100%] h-[100%] table-fixed">
-          <thead className="w-[100%]">
-            <tr>
-              <th className="text-left  w-[10rem] pl-2 ">Nông trường</th>
-              {data.headers.map((header, index) => (
-                <th key={index} className="font-normal ">
-                  {header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div className="w-full flex-[5] overflow-x-auto">
-        <table className="w-[100%] h-[100%] table-fixed ">
-          <tbody className="w-[100%]">
-            {data.rows.map((row, rInd) => (
-              <tr key={rInd} className={`text-white ${row.color}`}>
-                <td className="w-[10rem] pl-2 font-bold">{row.name}</td>
-                {row.value.map((val, cInd) => (
-                  <td key={cInd} className="text-center">
-                    {val}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
-export default TableData;
+
+// === STEP 3: Convert to dataSource ===
+const dataSource = rawData.rows.map((row, index) => {
+  const monthData = {};
+  row.value.forEach((val, i) => {
+    monthData[i + 1] = val;
+  });
+
+  return {
+    key: index + 1,
+    name: row.name,
+    color: row.color,
+    ...monthData,
+  };
+});
+
+// === STEP 4: Render Table ===
+const App = () => <Table columns={columns} dataSource={dataSource} scroll={{ x: 1200 }} />;
+const TableData = App;
+
+createRoot(document.getElementById('root')).render(<TableData />);
+export default TableData

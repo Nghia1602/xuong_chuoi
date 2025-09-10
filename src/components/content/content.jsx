@@ -4,7 +4,7 @@ import Khutramcho from "../page/khuTramCho/khuTramcho";
 const Content=() => {
   return <div style={{
         width: "100%",
-        height: "88.97%", //847px
+        height: "847px", //847px
         // border: "1px solid red",
         // display: "flex",
         // flexDirection: "column",
