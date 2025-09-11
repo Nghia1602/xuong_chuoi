@@ -1,27 +1,9 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "antd/dist/reset.css";
+import "./TableData.css"
+import { Table, Tag, Space } from "antd";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'antd/dist/reset.css';
-const { createRoot } = ReactDOM;
-import { Table, Tag, Space } from 'antd';
-
-// === STEP 1: Define Columns ===
-const columns = [
-  {
-    title: 'Tên chỉ số',
-    dataIndex: 'name',
-    key: 'name',
-    fixed: 'left',
-  },
-  ...Array.from({ length: 12 }, (_, i) => ({
-    title: `Tháng ${i + 1}`,
-    dataIndex: `${i + 1}`,
-    key: `${i + 1}`,
-    align: 'center',
-  })),
-];
-
-// === STEP 2: Raw Data ===
 const rawData = {
   headers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   rows: [
@@ -57,25 +39,59 @@ const rawData = {
     },
   ],
 };
+// === STEP 1: Define Columns ===
+const columns = [
+  {
+    title: "Nông trường",
+    dataIndex: "name",
+    key: "name",
+    fixed: "right",
+    minWidth: 200,
+    
+  },
+  ...rawData.headers.map((header) => ({
+    title: header,
+    dataIndex: header,
+    key: header,
+    align: "center",
+    minWidth: 40,
+    render: (value) => (
+      <div className="whitespace-nowrap overflow-hidden text-ellipsis">
+        {value}
+      </div>
+    ),
+  
+  })),
+];
+// === STEP 2: Raw Data ===
 
 // === STEP 3: Convert to dataSource ===
 const dataSource = rawData.rows.map((row, index) => {
-  const monthData = {};
-  row.value.forEach((val, i) => {
-    monthData[i + 1] = val;
-  });
-
-  return {
-    key: index + 1,
+  const rowData = {
+    key: index,
     name: row.name,
     color: row.color,
-    ...monthData,
   };
+
+  rawData.headers.forEach((header, i) => {
+    rowData[header] = row.value[i];
+  });
+
+  return rowData;
 });
-
+const rowClassName = (record) => record.color;
 // === STEP 4: Render Table ===
-const App = () => <Table columns={columns} dataSource={dataSource} scroll={{ x: 1200 }} />;
-const TableData = App;
+const TableData = () => (
+  <Table
+  className="custom-table"
+    pagination={false}
+    columns={columns}
+    dataSource={dataSource}
+    rowClassName={rowClassName}
+    scroll={{  x: 1000  }}
+    style={{ tableLayout: "auto", width:"100%", height:"100%",  }}
+  />
+);
 
-createRoot(document.getElementById('root')).render(<TableData />);
-export default TableData
+// createRoot(document.getElementById('root')).render(<TableData />);
+export default TableData;

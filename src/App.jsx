@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div style={{ width: "98.7vw",height: "954px",display:"flex",justifyContent:"center", flexDirection:"column", }}>
+      <div style={{ width: "100vw",height: "954px",display:"flex",justifyContent:"center", flexDirection:"column", }}>
         <Header style={{ }} />
      
         <Tabs />

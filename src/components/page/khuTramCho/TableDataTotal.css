@@ -1,0 +1,13 @@
+
+
+.custom-tabletotal .ant-table-cell {
+  height: 37.5px !important;
+  line-height: 37.5px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+ 
+}
+.custom-tabletotal .ant-table-content table {
+  table-layout: auto !important;
+  
+}

@@ -1,0 +1,13 @@
+.custom-table .ant-table-cell {
+  height: 36.5px !important;
+  line-height: 36.5px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+ 
+}
+
+
+.custom-table .ant-table-content table {
+  table-layout: auto !important;
+  
+}

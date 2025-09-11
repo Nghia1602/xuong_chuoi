@@ -4,11 +4,11 @@ import Khutramcho from "../page/khuTramCho/khuTramcho";
 const Content=() => {
   return <div style={{
         width: "100%",
-        height: "847px", //847px
+        minHeight: "847px", //847px
         // border: "1px solid red",
-        // display: "flex",
+        display: "flex",
         // flexDirection: "column",
-        // justifyContent: "center",
+        justifyContent: "center",
         // alignItems: "center",
         // boxSizing: "border-box",
         // fontFamily: "'Be Vietnam Pro',sans-serif ",
