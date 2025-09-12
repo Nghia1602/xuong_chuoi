@@ -8,7 +8,7 @@ const Header = (props) => {
     <div
       style={{
         background: "#398640",
-        height: "7.35%",
+        height: "70px",
         display: "flex",
         width: "100%",
       }}
@@ -17,7 +17,7 @@ const Header = (props) => {
         <div
           style={{
             width: "96%",
-            height: "77%",
+            height: "54px",
             display: "flex",
             alignItems: "center",
             paddingLeft: "0.625rem",
@@ -27,7 +27,7 @@ const Header = (props) => {
             src="/images/logo_agri.png"
             style={{
               width: "100%",
-              height: "52%",
+              height: "28px",
             }}
           />
         </div>
@@ -36,7 +36,7 @@ const Header = (props) => {
       <div
         style={{
           width: "73%",
-          height: "100%",
+          height: "70px",
           display: "flex",
           justifyContent: "center",
         }}
@@ -44,14 +44,14 @@ const Header = (props) => {
         <div
           style={{
             width: "83.2%",
-            height: "100%",
+            height: "70px%",
           }}
         >
           {/* ------------Thông tin liên hệ------------ */}
           <div
             style={{
               width: "100%",
-              height: "42.85%",
+              height: "30px",
               background: "white",
               borderRadius: "0 0 1rem 1rem",
               display: "flex",justifyContent:"center",
@@ -61,7 +61,7 @@ const Header = (props) => {
             <div
               style={{
                 // width: "50%",
-                height: "100%",
+                // height: "100%",
                 display: "flex",
                 flex:1,
                 alignItems: "center",
@@ -73,7 +73,7 @@ const Header = (props) => {
               <div
                 style={{
                   // width: "15%",
-                  height: "85%",
+                  height: "26px",
                   aspectRatio: "1 / 1",
                   borderRadius: "50%",
                   background: "#c6c6c670",
@@ -86,7 +86,7 @@ const Header = (props) => {
                   style={{
                     // width: "20px",
                     aspectRatio: "1/ 1",
-                    height: "71%",
+                    height: "18px",
                     borderRadius: "50%",
                     background: "white",
                     display: "flex",
@@ -102,7 +102,7 @@ const Header = (props) => {
                       // marginRight: "0.125rem",
                       borderRadius: "50%",
                       aspectRatio: "1/ 1",
-                      fontSize: "0.7vw",
+                      fontSize: "12px",
                       lineHeight: 1, // ✅ Rất quan trọng để fix lệch dọc
                       display: "flex",
                       justifyContent: "center",
@@ -141,7 +141,7 @@ const Header = (props) => {
           <div
             style={{
               width: "100%",
-              height: "57.15%",
+              height: "2.5rem",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -152,9 +152,9 @@ const Header = (props) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                height: "100%",
+                // height: "100%",
                 gap: "1rem",
-                fontSize: "0.83vw",
+                fontSize: "0.875rem",
                 color: "white",
                 fontFamily: "'Be Vietnam Pro', sans-serif",
                 position: "relative",
@@ -235,7 +235,7 @@ const Header = (props) => {
                     className="fa-regular fa-bell"
                     style={{
                       color: "green",
-                      fontSize: "0.7vw",
+                      fontSize: "0.9375rem",
                       lineHeight: 1,
                       display: "flex",
                       justifyContent: "center",
@@ -282,7 +282,7 @@ const Header = (props) => {
                       alignItems: "center",
                       overflow: "hidden",
 
-                      height: "2.0vh",
+                      height: "1.25rem",
                     }}
                   >
                     <i
@@ -292,7 +292,7 @@ const Header = (props) => {
                         lineHeight: 1,
                         maxWidth: "100%",
                         aspectRatio: "1/1",
-                        fontSize: "0.7vw",
+                        fontSize: "0.875rem",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
