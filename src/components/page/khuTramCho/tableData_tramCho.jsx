@@ -88,6 +88,7 @@ const TableData = () => (
     columns={columns}
     dataSource={dataSource}
     rowClassName={rowClassName}
+    rowKey="name" 
     scroll={{  x: 1000  }}
     style={{ tableLayout: "auto", width:"100%", height:"100%",  }}
   />

@@ -5,14 +5,7 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 import "../../../src/App.css";
 const Header = (props) => {
   return (
-    <div
-      style={{
-        background: "#398640",
-        height: "70px",
-        display: "flex",
-        width: "100%",
-      }}
-    >
+    <div className="flex items-center justify-center bg-[#398640]">
       <div style={{ display: "flex", alignItems: "center", width: "14.8%" }}>
         <div
           style={{
@@ -26,8 +19,9 @@ const Header = (props) => {
           <img
             src="/images/logo_agri.png"
             style={{
-              width: "100%",
+              // width: "100%",
               height: "28px",
+              aspectRatio:"initial"
             }}
           />
         </div>
@@ -39,24 +33,18 @@ const Header = (props) => {
           height: "70px",
           display: "flex",
           justifyContent: "center",
+          alignItems:"center"
         }}
       >
-        <div
+        <div className="flex items-center flex-col"
           style={{
             width: "83.2%",
             height: "70px%",
           }}
         >
           {/* ------------Thông tin liên hệ------------ */}
-          <div
-            style={{
-              width: "100%",
-              height: "30px",
-              background: "white",
-              borderRadius: "0 0 1rem 1rem",
-              display: "flex",justifyContent:"center",
-              overflow:"hidden", 
-            }}
+          <div className="w-[100%] h-[30px] bg-white  flex justify-center items-center overflow-hidden rounded-b-[1rem] xl:flex hidden"
+            
           >
             <div
               style={{
@@ -127,7 +115,7 @@ const Header = (props) => {
                 display: "flex",
                 flex:1,
                 alignItems: "center",
-                gap: "0.25rem",
+                // gap: "0.25rem",
               }}
             >
               Hotline báo cháy:{" "}
@@ -138,14 +126,8 @@ const Header = (props) => {
             </div>
           </div>
           {/* ---------------thanh menu + tài khoản-------------- */}
-          <div
-            style={{
-              width: "100%",
-              height: "2.5rem",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
+          <div className="w-[100%] h-[2.5rem] flex justify-between items-center"
+           
           >
             {/* ---------------Thanh menu------------------- */}
             <div
@@ -309,17 +291,9 @@ const Header = (props) => {
         style={{ width: "1165px", height: "70px", background: "white" }}
       ></div> */}
       {/* VÙng */}
-      <div style={{ width: "12.24%", height: "77%" }}>
-        <div
-          style={{
-            width: "90.2%",
-            height: "100%",
-            fontSize: "1rem",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-          }}
+      <div className="w-[12.24%] h-[4.375rem] flex items-center justify-center" >
+        <div className="w-[90.2%] h-[4.375rem] flex items-center justify-center text-white"
+          
         >
           GIÁM SÁT
         </div>

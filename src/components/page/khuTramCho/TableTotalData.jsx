@@ -48,6 +48,7 @@ const DataStatistics = () => {
       pagination={false}
     //   rowKey={(record) => record.name}
       rowClassName={rowClassName}
+      rowKey="name" 
     //   size="small"
       style={{ width:"100%",tableLayout:"auto", height:"100%" }}
       scroll={{  x: 250  }}
