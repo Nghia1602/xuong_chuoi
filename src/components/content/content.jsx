@@ -1,6 +1,7 @@
 import React from "react";
 import GiamSatChung from "../page/giam_sat_chung/giamsatchung_xuongchuoi";
 import Khutramcho from "../page/khuTramCho/khuTramcho";
+import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
 const Content=() => {
   return <div style={{
         width: "100%",
@@ -16,7 +17,8 @@ const Content=() => {
         // flexWrap: "wrap",
       }}>
     {/* <GiamSatChung/> */}
-    <Khutramcho/>
+    {/* <Khutramcho/> */}
+<WaitingAreaData/>
   </div>;
 };
 export default Content;
