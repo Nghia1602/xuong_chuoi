@@ -2,6 +2,7 @@ import React from "react";
 import GiamSatChung from "../page/giam_sat_chung/giamsatchung_xuongchuoi";
 import Khutramcho from "../page/khuTramCho/khuTramcho";
 import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
+import PackagingArea from "../page/PackagingArea/PackagingArea";
 const Content=() => {
   return <div style={{
         width: "100%",
@@ -18,7 +19,8 @@ const Content=() => {
       }}>
     {/* <GiamSatChung/> */}
     {/* <Khutramcho/> */}
-<WaitingAreaData/>
+{/* <WaitingAreaData/> */}
+    <PackagingArea/>
   </div>;
 };
 export default Content;

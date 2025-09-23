@@ -71,7 +71,7 @@ const Khutramcho = (props) => {
                   <div className="w-[25%]  flex ml-1 items-center  font-be-vietnam-pro text-sm min-w-[80px]">{thongke.value}</div>
                 </div>
               ))} */}
-              <DataStatistics Data={DataStatistics}/>
+              <DataStatistics Data={DataTotal}/>
             </div>
           </div>
         </div>

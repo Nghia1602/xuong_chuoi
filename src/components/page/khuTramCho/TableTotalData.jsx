@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "antd";
+import { Table, ConfigProvider } from "antd";
 import "./TableDataTotal.css";
 // const Data = [
 //   { name: "Số nông trường", value: 12, color: "bg-[#Ffff]" },
@@ -41,6 +41,15 @@ const rowClassName = (record) => record.color;
 
 
   return (
+    <ConfigProvider
+          theme={{
+            components: {
+              Table: {
+                headerBorderRadius: 0, 
+              },
+            },
+          }}
+        >
     <Table
     className="custom-tabletotal"
       dataSource={Data}
@@ -57,6 +66,7 @@ const rowClassName = (record) => record.color;
       showHeader={false} 
     
     />
+    </ConfigProvider>
   );
 };
 

@@ -6,33 +6,22 @@ import "../../../src/App.css";
 const Header = (props) => {
   return (
     <div className="flex items-center justify-center bg-[#398640]">
-      <div className="hidden sm:flex flex items-center w-[14.8%]" >
-        <div className="w-[96%] h-[54px] flex items-center justify-center "
-         
-        >
-          <img
-            src="/images/logo_agri.png" className="h-[28px]"
-          
-          />
+      <div className="hidden sm:flex flex items-center w-[14.8%]">
+        <div className="w-[96%] h-[54px] flex items-center justify-center ">
+          <img src="/images/logo_agri.png" className="h-[28px]" />
         </div>
       </div>
       {/* thanh giữa */}
-      <div className="w-[73%] h-[70px] flex justify-center items-center"
-        
-      >
-        <div className="flex items-center flex-col w-[83%] h-[70px] justify-center"
-          
-        >
+      <div className="w-[73%] h-[70px] flex justify-center items-center">
+        <div className="flex items-center flex-col w-[83%] h-[70px] justify-center">
           {/* ------------Thông tin liên hệ------------ */}
-          <div className="w-[100%] h-[30px] bg-white  flex justify-center items-center overflow-hidden rounded-b-[1rem] xl:flex hidden"
-            
-          >
-            <div 
+          <div className="w-[100%] h-[30px] bg-white  flex justify-center items-center overflow-hidden rounded-b-[1rem] xl:flex hidden">
+            <div
               style={{
                 // width: "50%",
                 // height: "100%",
                 display: "flex",
-                flex:1,
+                flex: 1,
                 alignItems: "center",
                 justifyContent: "end",
                 marginRight: "4rem",
@@ -94,7 +83,7 @@ const Header = (props) => {
               style={{
                 // width: "582.5px",
                 display: "flex",
-                flex:1,
+                flex: 1,
                 alignItems: "center",
                 // gap: "0.25rem",
               }}
@@ -107,11 +96,9 @@ const Header = (props) => {
             </div>
           </div>
           {/* ---------------thanh menu + tài khoản-------------- */}
-          <div className="w-[100%] h-[2.5rem] flex justify-between items-center gap-[0.375rem]"
-           
-          >
+          <div className="w-[100%] h-[2.5rem] flex justify-between items-center gap-[0.375rem]">
             {/* ---------------Thanh menu------------------- */}
-            <div 
+            <div
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -141,9 +128,7 @@ const Header = (props) => {
                 height: "100%",
               }}
             >
-              <div className="h-[70%]  aspect-square bg-[#c6c6c670] rounded-full flex justify-center items-center hidden md:flex"
-                
-              >
+              <div className="h-[70%]  aspect-square bg-[#c6c6c670] rounded-full flex justify-center items-center hidden md:flex">
                 <div
                   style={{
                     background: "white",
@@ -162,9 +147,7 @@ const Header = (props) => {
                   />
                 </div>
               </div>
-              <div className="hidden md:flex h-[70%] aspect-square bg-[#c6c6c670] rounded-full flex justify-center items-center"
-                
-              >
+              <div className="hidden md:flex h-[70%] aspect-square bg-[#c6c6c670] rounded-full flex justify-center items-center">
                 <div
                   style={{
                     background: "white",
@@ -199,9 +182,7 @@ const Header = (props) => {
                   height: "100%",
                 }}
               >
-                <div className="text-center font-be-vietnam-pro text-white hidden sx:flex"
-                  
-                >
+                <div className="text-center font-be-vietnam-pro text-white hidden sx:flex">
                   Trần Văn Nghĩa
                 </div>
                 <div
@@ -253,12 +234,8 @@ const Header = (props) => {
         style={{ width: "1165px", height: "70px", background: "white" }}
       ></div> */}
       {/* VÙng */}
-      <div className="w-[12.24%] h-[4.375rem] flex items-center justify-center text-white" >
-        
-          
-      
-          GIÁM SÁT
-       
+      <div className="w-[12.24%] h-[4.375rem] flex items-center justify-center text-white">
+        GIÁM SÁT
       </div>
     </div>
   );
