@@ -22,10 +22,10 @@ const PackagingArea = () => {
 //     }
 //   };
   return (
-    <div className="w-full h-full flex justify-center flex flex-col font-be-vietnam-pro text-sm">
-      <div className="h-[1.375rem] w-full flex pl-[0.5rem] border-b-[0.3px] border-[#c6c6c6100]">
+    <div className="w-full h-full justify-center flex flex-col font-be-vietnam-pro text-sm">
+      <div className="h-[1.7rem] items-center w-full flex pl-[0.5rem] border-b-[0.3px] border-[#c6c6c6100]">
         <div
-          className={`h-full w-[5rem] text-sm text-center cursor-pointer ${
+          className={`h-full w-[4.5rem] text-sm justify-center flex items-center cursor-pointer ${
             isActive("tong-quan") 
               ? "text-green-400 border-b-[0.5px] border-green-500"
               : "text-black"
@@ -35,7 +35,7 @@ const PackagingArea = () => {
           Tổng quan
         </div>
         <div
-          className={`h-full w-[4rem] text-sm text-center cursor-pointer ${
+          className={`h-full w-[3.5rem] text-sm justify-center flex items-center cursor-pointer ${
             isActive("module") 
               ? "text-green-400 border-b-[0.5px] border-green-500"
               : "text-black"

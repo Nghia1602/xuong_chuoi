@@ -3,8 +3,11 @@ import GiamSatChung from "../page/giam_sat_chung/giamsatchung_xuongchuoi";
 import Khutramcho from "../page/khuTramCho/khuTramcho";
 import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
 import PackagingArea from "../page/PackagingArea/PackagingArea";
-const Content=() => {
-  return <div style={{
+import AreaRouter from "../../Router/AreaRouter";
+const Content = () => {
+  return (
+    <div
+      style={{
         width: "100%",
         minHeight: "847px", //847px
         // border: "1px solid red",
@@ -16,11 +19,14 @@ const Content=() => {
         // fontFamily: "'Be Vietnam Pro',sans-serif ",
         // overflow:"hidden",
         // flexWrap: "wrap",
-      }}>
-    {/* <GiamSatChung/> */}
-    {/* <Khutramcho/> */}
-{/* <WaitingAreaData/> */}
-    <PackagingArea/>
-  </div>;
+      }}
+    >
+      {/* <GiamSatChung/> */}
+      {/* <Khutramcho/> */}
+      {/* <WaitingAreaData/> */}
+      {/* <PackagingArea/> */}
+      <AreaRouter />
+    </div>
+  );
 };
 export default Content;

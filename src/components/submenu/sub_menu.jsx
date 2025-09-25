@@ -1,5 +1,6 @@
 import React from "react";
 import { RightOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 const SubMenuXuong = (props) => {
   return (
     <div
@@ -68,27 +69,29 @@ const SubMenuXuong = (props) => {
                 borderRadius: "8px",
                 zIndex: 1000,
                 color: "black",
-                paddingLeft: "10px"
+                paddingLeft: "10px",
+                display:"flex",
+                flexDirection:"column"
               }}
             >
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              <Link to="/xuong/bp1-1/giam-sat-chung" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Giám sát chung
-              </div>
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              </Link>
+              <Link to="/xuong/bp1-1/khu-tram-cho" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Khu trạm chờ
-              </div>
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              </Link>
+              <Link to="/xuong/bp1-1/khu-dong-goi" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Khu đóng gói
-              </div>
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              </Link>
+              <Link to="/xuong/bp1-1/kho-mat" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Kho mát
-              </div>
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              </Link>
+              <Link to="/xuong/bp1-1/xuat-kho" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Xuất kho
-              </div>
-              <div style={{ padding: "8px 12px", cursor: "pointer" }}>
+              </Link>
+              <Link to="/xuong/bp1-1/cai-dat" style={{ padding: "8px 12px", cursor: "pointer" }}>
                 Cài đặt
-              </div>
+              </Link>
             </div>
           </div>
           <div style={{ padding: "8px 12px", cursor: "pointer" }}>

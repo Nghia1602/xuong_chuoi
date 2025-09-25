@@ -68,7 +68,7 @@ background: transparent;
 
 
 /* ------------------------------------------------- */
-.xuong .submenuxuong>div:hover {
+.xuong .submenuxuong> div:hover {
   background-color: rgba(234, 236, 236, 0.5);
   color: green;
   border: 1.5px solid green;
@@ -94,7 +94,7 @@ background: transparent;
 .submenuxuong .sub_vung_snoul > div {
   color: black; /* Đặt màu chữ mặc định để không bị kế thừa */
 }
-.submenuxuong .sub_vung_snoul .sub_bp1-1>div:hover{
+.submenuxuong .sub_vung_snoul .sub_bp1-1>a:hover{
     background-color: rgba(234, 236, 236, 0.5);
   color: green;
   border: 1.5px solid green;
