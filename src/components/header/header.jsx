@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 // import logo_agri from "../../../public/images/logo_agri.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SubMenuXuong from "../submenu/sub_menu.jsx";
-import "../../../src/App.css";
+// import "../../../src/App.css";
+// import Menu from "../submenu/submenu2.jsx";
+import Menu1 from "../submenu/TestSubMenu.jsx";
 const Header = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
     <div className="flex items-center justify-center bg-[#398640]">
       <div className="hidden sm:flex flex items-center w-[14.8%]">
@@ -111,8 +117,30 @@ const Header = (props) => {
               }}
             >
               <div className="text-center ">Trang chủ</div>
-              <div className="xuong" style={{ position: "relative" }}>
-                Xưởng <SubMenuXuong />
+              <div
+                className="xuong flex justify-center items-center "
+                style={{
+                  position: "relative",
+                  // color: "red",
+                  // background: "yellow",
+                  // height: "15px",
+                }}
+                onClick={toggleMenu}
+              >
+                Xưởng
+                {isOpen && (
+                  <div
+                    className="absolute bg-white  w-[11rem] flex justify-center items-center rounded-[5px]"
+                    style={{
+                      top: "180%",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                    }}
+                  >
+                    <Menu1 />
+                  </div>
+                )}
+                {/* <SubMenuXuong /> */}
               </div>
 
               <div className="text-center ">Hướng dẫn sử dụng</div>
