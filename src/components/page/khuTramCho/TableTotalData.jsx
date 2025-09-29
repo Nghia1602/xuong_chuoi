@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, ConfigProvider } from "antd";
+import { Table, ConfigProvider, Empty } from "antd";
 import "./TableDataTotal.css";
 // const Data = [
 //   { name: "Số nông trường", value: 12, color: "bg-[#Ffff]" },
@@ -9,63 +9,69 @@ import "./TableDataTotal.css";
 //   { name: "Khối lượng (tấn)", value: 13.347, color: "bg-[#6A8FD8]" },
 //   { name: "Năng suất (kg/buồng)", value: 32.86, color: "bg-[#5A9CCA]" },
 // ];
-const DataStatistics = ({Data}) => {
-// Định nghĩa cột
-const columns = [
-  {
-    
-    dataIndex: "name",
-    key: "name",
-    width: "75%",
-    render: (text, record) => (
-      <div className="truncate font-be-vietnam-pro text-sm" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-        {text}
-      </div>
-    ),
-  },
-  {
-    
-    dataIndex: "value",
-    key: "value",
-    width: "25%",
-    render: (value) => (
-      <div className="font-be-vietnam-pro text-sm">
-        {value}
-      </div>
-    ),
-  },
-];
+const DataStatistics = ({ Data }) => {
+  // Định nghĩa cột
+  const columns = [
+    {
+      dataIndex: "name",
+      key: "name",
+      width: "75%",
+      render: (text, record) => (
+        <div
+          className="truncate font-be-vietnam-pro text-sm"
+          style={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {text}
+        </div>
+      ),
+    },
+    {
+      dataIndex: "value",
+      key: "value",
+      width: "25%",
+      render: (value) => (
+        <div className="font-be-vietnam-pro text-sm">{value}</div>
+      ),
+    },
+  ];
 
-// Thêm màu cho từng row dựa vào record.color
-const rowClassName = (record) => record.color;
-
+  // Thêm màu cho từng row dựa vào record.color
+  const rowClassName = (record) => record.color;
 
   return (
     <ConfigProvider
-          theme={{
-            components: {
-              Table: {
-                headerBorderRadius: 0, 
-              },
-            },
-          }}
-        >
-    <Table
-    className="custom-tabletotal"
-      dataSource={Data}
-      bordered
-      columns={columns}
-      pagination={false}
-    //   rowKey={(record) => record.name}
-      rowClassName={rowClassName}
-      rowKey="name" 
-    //   size="small"
-      style={{ width:"100%",tableLayout:"auto", height:"100%" }}
-      scroll={{  x: 250  }}
-    //   bordered={false}
-      showHeader={false} 
-    
-    />
+      theme={{
+        components: {
+          Table: {
+            headerBorderRadius: 0,
+          },
+        },
+      }}
+    >
+      <Table
+        className="custom-tabletotal"
+        dataSource={Data}
+        bordered
+        columns={columns}
+        pagination={false}
+        //   rowKey={(record) => record.name}
+        rowClassName={rowClassName}
+        rowKey="name"
+        //   size="small"
+        style={{ width: "100%", tableLayout: "auto", height: "100%" }}
+        scroll={{ x: 250 }}
+        //   bordered={false}
+        showHeader={false}
+        locale={{
+          emptyText: (
+            <Empty description="No data" style={{ margin: "46px 0" }} />
+          ),
+        }}
+      />
     </ConfigProvider>
   );
 };

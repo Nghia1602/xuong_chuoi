@@ -2,16 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "antd/dist/reset.css";
 import "./TableData.css";
-import { Table,  ConfigProvider } from "antd";
+import { Table,  ConfigProvider, Empty } from "antd";
 
 const TableData = ({ rawData }) => {
+   if (!rawData || !rawData.headers || !rawData.rows) {
+    return <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <Empty description="No data" />
+    </div>;
+  }
   const columns = [
     {
       title: "Nông trường",
       dataIndex: "name",
       key: "name",
       fixed: "right",
-      minWidth: 200,
+      width: 200,
       render: (text) => (
         <span className=" whitespace-nowrap text-ellipsis font-medium ">
           {text}
@@ -23,7 +28,7 @@ const TableData = ({ rawData }) => {
       dataIndex: header,
       key: header,
       align: "center",
-      minWidth: 40,
+      // minWidth: "8.33%",
       render: (value) => (
         <div className="whitespace-nowrap overflow-hidden text-ellipsis ">
           {value}
@@ -68,6 +73,7 @@ const TableData = ({ rawData }) => {
       rowClassName={rowClassName}
       rowKey="name"
       scroll={{ x: 1000 }}
+      
       style={{ tableLayout: "auto", width: "100%", height: "100%" }}
     />
     </ConfigProvider>

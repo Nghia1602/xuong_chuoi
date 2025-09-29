@@ -22,11 +22,11 @@ const items = [
         label: "Xưởng BP1-1",
 
         children: [
-          { key: "giam-sat-chung", label: <Link to={"/vung-snoul/xuong-bp1-1/giam-sat-chung"}>Giám sát chung</Link> },
-          { key: "khu-tram-cho", label: <Link to={"/vung-snoul/xuong-bp1-1/khu-tram-cho"}>Khu trạm chờ</Link>},
-          { key: "khu-dong-goi", label: <Link to={"/vung-snoul/xuong-bp1-1/khu-dong-goi"}>Khu đóng gói</Link> },
-          { key: "kho-mat", label: <Link to={"/vung-snoul/xuong-bp1-1/kho-mat"}>Kho mát</Link>  },
-          { key: "cai-dat", label: <Link to={"/vung-snoul/xuong-bp1-1/cai-dat"}>Cài đặt</Link> },
+          { key: "xuong-bp1-1-giam-sat-chung", label: <Link to={"/vung-snoul/xuong-bp1-1/giam-sat-chung"}>Giám sát chung</Link> },
+          { key: "xuong-bp1-1-khu-tram-cho", label: <Link to={"/vung-snoul/xuong-bp1-1/khu-tram-cho"}>Khu trạm chờ</Link>},
+          { key: "xuong-bp1-1-khu-dong-goi", label: <Link to={"/vung-snoul/xuong-bp1-1/khu-dong-goi"}>Khu đóng gói</Link> },
+          { key: "xuong-bp1-1-kho-mat", label: <Link to={"/vung-snoul/xuong-bp1-1/kho-mat"}>Kho mát</Link>  },
+          { key: "xuong-bp1-1-cai-dat", label: <Link to={"/vung-snoul/xuong-bp1-1/cai-dat"}>Cài đặt</Link> },
           { key: "xuat-kho", label: <Link to={"/vung-snoul/xuong-bp1-1/xuat-kho"}>Xuất kho</Link> },
         ],
       },
@@ -35,12 +35,12 @@ const items = [
         label: "Xưởng BP1-2",
 
         children: [
-            { key: "giam-sat-chung", label: <Link to={"/vung-snoul/xuong-bp1-2/giam-sat-chung"}>Giám sát chung</Link> },
-          { key: "khu-tram-cho", label: <Link to={"/vung-snoul/xuong-bp1-2/khu-tram-cho"}>Khu trạm chờ</Link>},
-          { key: "khu-dong-goi", label: <Link to={"/vung-snoul/xuong-bp1-2/khu-dong-goi"}>Khu đóng gói</Link> },
-          { key: "kho-mat", label: <Link to={"/vung-snoul/xuong-bp1-2/kho-mat"}>Kho mát</Link>  },
-          { key: "cai-dat", label: <Link to={"/vung-snoul/xuong-bp1-2/cai-dat"}>Cài đặt</Link> },
-          { key: "xuat-kho", label: <Link to={"/vung-snoul/xuong-bp1-2/xuat-kho"}>Xuất kho</Link> },
+            { key: "xuong-bp1-2-giam-sat-chung", label: <Link to={"/vung-snoul/xuong-bp1-2/giam-sat-chung"}>Giám sát chung</Link> },
+          { key: "xuong-bp1-2-khu-tram-cho", label: <Link to={"/vung-snoul/xuong-bp1-2/khu-tram-cho"}>Khu trạm chờ</Link>},
+          { key: "xuong-bp1-2-khu-dong-goi", label: <Link to={"/vung-snoul/xuong-bp1-2/khu-dong-goi"}>Khu đóng gói</Link> },
+          { key: "xuong-bp1-2-kho-mat", label: <Link to={"/vung-snoul/xuong-bp1-2/kho-mat"}>Kho mát</Link>  },
+          { key: "xuong-bp1-2-cai-dat", label: <Link to={"/vung-snoul/xuong-bp1-2/cai-dat"}>Cài đặt</Link> },
+          { key: "xuong-bp1-2-xuat-kho", label: <Link to={"/vung-snoul/xuong-bp1-2/xuat-kho"}>Xuất kho</Link> },
         ],
       },
       {
@@ -48,12 +48,12 @@ const items = [
         label: "Xưởng ER1-1",
 
         children: [
-         { key: "giam-sat-chung", label: <Link to={"/vung-snoul/xuong-er1-1/giam-sat-chung"}>Giám sát chung</Link> },
-          { key: "khu-tram-cho", label: <Link to={"/vung-snoul/xuong-er1-1/khu-tram-cho"}>Khu trạm chờ</Link>},
-          { key: "khu-dong-goi", label: <Link to={"/vung-snoul/xuong-er1-1/khu-dong-goi"}>Khu đóng gói</Link> },
-          { key: "kho-mat", label: <Link to={"/vung-snoul/xuong-er1-1/kho-mat"}>Kho mát</Link>  },
-          { key: "cai-dat", label: <Link to={"/vung-snoul/xuong-er1-1/cai-dat"}>Cài đặt</Link> },
-          { key: "xuat-kho", label: <Link to={"/vung-snoul/xuong-er1-1/xuat-kho"}>Xuất kho</Link> },
+         { key: "xuong-er1-1-giam-sat-chung", label: <Link to={"/vung-snoul/xuong-er1-1/giam-sat-chung"}>Giám sát chung</Link> },
+          { key: "xuong-er1-1-khu-tram-cho", label: <Link to={"/vung-snoul/xuong-er1-1/khu-tram-cho"}>Khu trạm chờ</Link>},
+          { key: "xuong-er1-1-khu-dong-goi", label: <Link to={"/vung-snoul/xuong-er1-1/khu-dong-goi"}>Khu đóng gói</Link> },
+          { key: "xuong-er1-1-kho-mat", label: <Link to={"/vung-snoul/xuong-er1-1/kho-mat"}>Kho mát</Link>  },
+          { key: "xuong-er1-1-cai-dat", label: <Link to={"/vung-snoul/xuong-er1-1/cai-dat"}>Cài đặt</Link> },
+          { key: "xuong-er1-1-xuat-kho", label: <Link to={"/vung-snoul/xuong-er1-1/xuat-kho"}>Xuất kho</Link> },
         ],
       },
       {

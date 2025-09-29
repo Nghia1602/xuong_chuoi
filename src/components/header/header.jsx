@@ -4,7 +4,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import SubMenuXuong from "../submenu/sub_menu.jsx";
 // import "../../../src/App.css";
 // import Menu from "../submenu/submenu2.jsx";
-import Menu1 from "../submenu/TestSubMenu.jsx";
+// import Menu1 from "../submenu/TestSubMenu.jsx";
+import Menu1 from "../submenu/submenu2.jsx";
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
