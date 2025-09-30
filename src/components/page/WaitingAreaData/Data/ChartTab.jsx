@@ -18,7 +18,7 @@ const handleChange = (value) => {
 };
 const ChartTab = (props) => {
   return (
-    <div className="w-full h-[52rem]">
+    <div className="w-full h-[20rem]">
       <div className="h-[22rem] w-full flex flex-col gap-1 items-center ">
         <div className="h-[2.5rem] w-[100%] flex ">
           {" "}
@@ -74,7 +74,7 @@ const ChartTab = (props) => {
           <div className="flex justify-center items-center h-[2.1875rem] bg-[#c6c6c6] w-full rounded-t-[5px]">
             Chi tiết dữ liệu thu hoạch từng nông trường{" "}
           </div>
-          <div className="flex justify-center items-center h-[27rem] w-full  ">
+          <div className="flex justify-center items-center h-[26rem] w-full  ">
             <BananaBunchQuanlityStatisticsChart />
           </div>
         </div>

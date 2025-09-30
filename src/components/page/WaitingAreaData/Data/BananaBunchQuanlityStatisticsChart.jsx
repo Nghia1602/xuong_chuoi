@@ -88,7 +88,7 @@ export default function BananaBunchQuanlityStatisticsChart() {
   return (
     <div style={{ overflowX: "auto", width: "100%" }}>
       <div style={{ minWidth: "1000px",  }}>
-        <ResponsiveContainer width="100%" height={430}>
+        <ResponsiveContainer width="100%" height={400}>
           <LineChart
             data={data}
             margin={{

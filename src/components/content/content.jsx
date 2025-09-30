@@ -9,16 +9,13 @@ const Content = () => {
     <div
       style={{
         width: "100%",
-        minHeight: "847px", //847px
+        // minHeight: "882px", //847px
         // border: "1px solid red",
         display: "flex",
         // flexDirection: "column",
         justifyContent: "center",
         // alignItems: "center",
-        // boxSizing: "border-box",
-        // fontFamily: "'Be Vietnam Pro',sans-serif ",
-        // overflow:"hidden",
-        // flexWrap: "wrap",
+      
       }}
     >
       {/* <GiamSatChung/> */}

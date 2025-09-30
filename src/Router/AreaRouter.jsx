@@ -69,16 +69,17 @@
 // App.jsx
 // src/App.jsx
 import {  Routes, Route } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import PageWrapper from "../components/Test/PageWrapper";
 
 function AreaRouter() {
   return (
     
       <Routes>
-        <Route path="/" element={< Outlet/>}>
-          <Route path=":vung/:xuong/:khu" element={<PageWrapper />} />
-        </Route>
+       
+          <Route path="/:vung/:xuong/:khu" element={<Navigate to="giam-sat" replace />} />
+          <Route path=":vung/:xuong/:khu/:tab" element={<PageWrapper />} />
+        
       </Routes>
     
   );
