@@ -4,6 +4,9 @@ import Khutramcho from "../page/khuTramCho/khuTramcho";
 import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
 import PackagingArea from "../page/PackagingArea/PackagingArea";
 import AreaRouter from "../../Router/AreaRouter";
+import Home from "../page/Home/Home";
+import Modules from "../page/PackagingArea/Module/Module";
+import OverView from "../page/PackagingArea/Overview/Overview";
 const Content = () => {
   return (
     <div
@@ -15,7 +18,6 @@ const Content = () => {
         // flexDirection: "column",
         justifyContent: "center",
         // alignItems: "center",
-      
       }}
     >
       {/* <GiamSatChung/> */}
@@ -23,6 +25,9 @@ const Content = () => {
       {/* <WaitingAreaData/> */}
       {/* <PackagingArea/> */}
       <AreaRouter />
+      {/* <Modules/> */}
+      {/* <OverView/> */}
+      {/* <Home/> */}
     </div>
   );
 };

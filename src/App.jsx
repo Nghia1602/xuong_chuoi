@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Header from "./components/header/header";
-import Tabs from "./components/Tabs/Tab";
+// import Tabs from "./components/Tabs/Tab";
 import Content from "./components/content/content";
 import "./App.css";
 

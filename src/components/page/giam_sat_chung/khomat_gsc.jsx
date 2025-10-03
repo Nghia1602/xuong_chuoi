@@ -22,13 +22,13 @@ const Khomat_gsc = (props) => {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "100%",
+        height: 261,
       }}
     >
       <div
         style={{
           width: "100%",
-          height: "13.4%", //35
+          height: 35, //35
           background: "#14141411",
           borderRadius: "5px 5px 0 0",
           display: "flex",
@@ -38,12 +38,12 @@ const Khomat_gsc = (props) => {
           fontFamily: "'Be Vietnam Pro', sans-serif",
         }}
       >
-        Khu mát
+        Kho mát
       </div>
       <div
         style={{
           height: "86.6%", //226px
-          width: "100%", //1888px
+          width: 1888, //1888px
           display: "flex",
           alignItems: "center",
           //   justifyContent:"space-between",
@@ -55,7 +55,7 @@ const Khomat_gsc = (props) => {
         <div
           style={{
             width: "33%", //623px
-            height: "96.46%", //218px
+            height: 218, //218px
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
@@ -68,7 +68,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "12%", //26
+              height: 26, //26
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -80,7 +80,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "88%", //192
+              height: 192, //192
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -95,7 +95,7 @@ const Khomat_gsc = (props) => {
         <div
           style={{
             width: "33%", //623px
-            height: "96.46%", //218px
+            height: 218, //218px
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
@@ -108,7 +108,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "12%", //26
+              height: 26, //26
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -120,7 +120,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "88%", //192
+              height: 192, //192
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -135,7 +135,7 @@ const Khomat_gsc = (props) => {
         <div
           style={{
             width: "33%", //623px
-            height: "96.46%", //218px
+            height: 218, //218px
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
@@ -148,7 +148,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "12%", //26
+              height: 26, //26
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -160,7 +160,7 @@ const Khomat_gsc = (props) => {
           <div
             style={{
               width: "94.7%", //590
-              height: "88%", //192
+              height: 192, //192
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

@@ -37,7 +37,7 @@ const DetailedHarvestData = ({ rawData }) => {
       pagination={{
         pageSize: pageSize, // Số dòng trên mỗi trang
         showSizeChanger: true, // Cho phép người dùng thay đổi số dòng hiển thị
-        pageSizeOptions: ([5, 10, 20]), // Các tùy chọn số dòng
+        pageSizeOptions: ([5, 10, 25]), // Các tùy chọn số dòng
         onShowSizeChange: (current, size) => {
           setPageSize(size); 
         },
@@ -45,6 +45,7 @@ const DetailedHarvestData = ({ rawData }) => {
       rowKey="key"
       scroll={{ x: 1000 }}
       style={{ width: "100%", height: "100%",  }}
+      size="small"
     />
   );
 };

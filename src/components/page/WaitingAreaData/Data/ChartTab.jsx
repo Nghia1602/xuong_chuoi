@@ -9,6 +9,7 @@ import DataStatistics from "../../khuTramCho/TableTotalData";
 import BananaBunchMassStatisticsChart from "./BananaBunchMassStatisticsChart";
 import BananaBunchQuanlityStatisticsChart from "./BananaBunchQuanlityStatisticsChart";
 
+
 const onChange = (date, dateString) => {
   console.log(date, dateString);
 };
@@ -16,9 +17,9 @@ const onChange = (date, dateString) => {
 const handleChange = (value) => {
   console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
 };
-const ChartTab = (props) => {
+const ChartTab = ({data}) => {
   return (
-    <div className="w-full h-[20rem]">
+    <div className="w-full h-[51rem]">
       <div className="h-[22rem] w-full flex flex-col gap-1 items-center ">
         <div className="h-[2.5rem] w-[100%] flex ">
           {" "}
@@ -44,9 +45,9 @@ const ChartTab = (props) => {
           <div></div>
         </div>
         <div className="h-[16.5rem] w-[100%] flex justify-center gap-2 flex-wrap ">
-          <div className="w-[99.4%] h-[2.1875rem] bg-[#c6c6c6] flex items-center justify-center rounded-t-[0.3125rem]">Thống kê số lượng buồng thu hoạch theo ngày</div>
+          <div className="w-[99.4%] h-[2.1875rem] bg-[#c6c6c6] flex items-center justify-center rounded-t-[0.3125rem]">Thống kê khối lượng buồng thu hoạch theo ngày</div>
           
-          <BananaBunchMassStatisticsChart/>
+          <BananaBunchMassStatisticsChart data={data["linechart-chart1"]}/>
         </div>
       </div>
       <div className="h-[26rem] w-full flex flex-col px-[0.4rem]   ">
@@ -75,7 +76,7 @@ const ChartTab = (props) => {
             Chi tiết dữ liệu thu hoạch từng nông trường{" "}
           </div>
           <div className="flex justify-center items-center h-[26rem] w-full  ">
-            <BananaBunchQuanlityStatisticsChart />
+            <BananaBunchQuanlityStatisticsChart data={data["linechart-chart2"]}/>
           </div>
         </div>
       </div>

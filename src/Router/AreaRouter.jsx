@@ -71,16 +71,35 @@
 import {  Routes, Route } from "react-router-dom";
 import { Outlet, Navigate } from "react-router-dom";
 import PageWrapper from "../components/Test/PageWrapper";
-
+import Home from "../components/page/Home/Home";
 function AreaRouter() {
   return (
     
+      // <Routes>
+      //  {/* <Route path="/" element={<Navigate to ="/" replace/>}/> */}
+      //  <Route path="/" element={<Home/>}/>
+      //  <Route>
+      //     <Route path="/:vung/:xuong/:khu" element={<Navigate to="giam-sat" replace />} />
+      //     <Route path=":vung/:xuong/:khu/:tab" element={<PageWrapper />} />
+      //     <Route path=":vung/:xuong/:khu/:tab/:subtab" element={<PageWrapper />} />
+      //   </Route>
+      // </Routes>
       <Routes>
-       
-          <Route path="/:vung/:xuong/:khu" element={<Navigate to="giam-sat" replace />} />
-          <Route path=":vung/:xuong/:khu/:tab" element={<PageWrapper />} />
-        
-      </Routes>
+  <Route path="/" element={<Home />} />
+
+  {/* Nhóm các route vùng */}
+  <Route path=":vung/:xuong/:khu">
+    {/* khi chỉ có vung/xuong/khu → redirect */}
+    <Route index element={<Navigate to="giam-sat" replace />} />
+
+    {/* Tab */}
+    <Route path=":tab" element={<PageWrapper />} />
+
+    {/* Subtab */}
+    <Route path=":tab/:subtab" element={<PageWrapper />} />
+  </Route>
+</Routes>
+
     
   );
 }

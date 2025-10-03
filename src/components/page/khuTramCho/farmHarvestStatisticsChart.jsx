@@ -110,7 +110,7 @@ const FarmHarvestStatisticsChart = ({ data }) => {
   };
 
   return (
-    <div className="w-full h-full overflow-x-auto">
+    <div className="w-full h-[500px] overflow-x-auto">
       <div className="min-w-[1224px] h-full">
         <Chart
           data={chartData}

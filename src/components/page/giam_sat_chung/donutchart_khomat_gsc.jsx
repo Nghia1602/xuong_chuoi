@@ -39,13 +39,13 @@ const DonutChart_khomat_gsc = ({ data }) => {
       ref={containerRef}
       style={{
         width: "100%",
-        height: "91.7%",
+        height: 174,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height={174}>
         <PieChart>
           <Pie
             data={data}

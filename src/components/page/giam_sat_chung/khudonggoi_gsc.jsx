@@ -7,7 +7,7 @@ const Khudonggoi_gsc = (props) => {
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div
         style={{
-          height: "13.4%", //35px
+          height: "35px", //35px
           background: "#14141411",
           borderRadius: "5px 5px 0 0",
           display: "flex",
@@ -21,7 +21,7 @@ const Khudonggoi_gsc = (props) => {
       </div>
       <div
         style={{
-          height: "86.6%", //226px
+          height: 226, //226px
           width: "100%", //1888px
           display: "flex",
           alignItems: "center",
@@ -34,7 +34,7 @@ const Khudonggoi_gsc = (props) => {
         <div
           style={{
             // width: 623,//623px
-            height: "96%",//218px
+            height: 218,//218px
             flex: 1,
             // border: "1px solid red",
             display: "flex",
@@ -48,7 +48,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590
-              height: "12%",//26
+              height: 26,//26
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -60,7 +60,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590
-              height: "88%",//192px
+              height: 192,//192px
               display: "flex",
               alignItems:"center",
 
@@ -70,7 +70,7 @@ const Khudonggoi_gsc = (props) => {
             <div
               style={{
                 width: 340,
-                height: "100%",
+                height: 192,
                 gap: "5px",
                 display: "flex",
                 flexDirection: "column",alignItems:"center", justifyContent:"center"
@@ -279,7 +279,7 @@ const Khudonggoi_gsc = (props) => {
         <div
           style={{
             // width: 623,
-            height: "96%",//218px
+            height: 218,//218px
             flex: 1,
             borderRight: "1px solid #c6c6c670",
             boxSizing: "border-box",
@@ -292,7 +292,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590px
-              height: "12%",//26px
+              height: 26,//26px
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -304,7 +304,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590px
-              height: "88%",//192px
+              height: 192,//192px
               // border: "1px solid red",
               display: "flex",
               flexDirection: "column",
@@ -316,7 +316,7 @@ const Khudonggoi_gsc = (props) => {
             <div
               style={{
                 width: "100%",//590px
-                height: "9.8%",//19px
+                height: 19,//19px
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
@@ -343,7 +343,7 @@ const Khudonggoi_gsc = (props) => {
             <div
               style={{
                 width: "100%",//590px
-                height: "77.6%",//149px
+                height: 149,//149px
                 display: "flex",
                 flexWrap: "wrap",
                 gap: 9,
@@ -613,7 +613,7 @@ const Khudonggoi_gsc = (props) => {
           style={{
             // width: 623,
             flex:1,
-            height: "96%",//218px
+            height: 218,//218px
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -623,7 +623,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590px
-              height: "12%",//26px
+              height: 26,//26px
               borderBottom: "1px solid #c6c6c670",
               display: "flex",
               justifyContent: "center",
@@ -635,7 +635,7 @@ const Khudonggoi_gsc = (props) => {
           <div
             style={{
               width: "94.7%",//590px
-              height: "88%",//192px
+              height: 192,//192px
               // border: "1px solid red",
               display: "flex",
               flexDirection: "column",
@@ -647,7 +647,7 @@ const Khudonggoi_gsc = (props) => {
             <div
               style={{
                 width: "100%",//590px
-                height: "9.8%",//59px
+                height: 19,//19px
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
@@ -674,7 +674,7 @@ const Khudonggoi_gsc = (props) => {
             <div
               style={{
                 width: "100%",//590px
-                height: "77.6%",//149px
+                height: 149,//149px
                 display: "flex",
                 flexWrap: "wrap",
                 gap: 9,

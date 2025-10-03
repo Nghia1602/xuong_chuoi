@@ -10,11 +10,11 @@ const GiamSatChung = (props) => {
     <div
       style={{
         width: "100%",
-        height: "100%", //847px
+        height: "810px", //847px
         // border: "1px solid red",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        
         alignItems: "center",
         boxSizing: "border-box",
         fontFamily: "'Be Vietnam Pro',sans-serif ",
@@ -27,19 +27,18 @@ const GiamSatChung = (props) => {
       <div
         style={{
           width: "98.33%",//1888px
-          height: "30.81%",//261px
+          height: 261,//261px
           borderRadius: "0.3125rem 0.3125rem 0 0",
           boxShadow: "0 0.125rem 0.5rem rgba(63, 63, 63, 0.15)",
-          marginBottom: "0.9375rem",
-          marginTop: "0.625",
-          // border: "1px solid red",
+          marginBottom: "0.5rem",
+          
           
         }}
       >
         <div
           style={{
             maxWidth: "100%",//1888px
-            height: "13.41%",//35px
+            height: 35,//35px
             background: "#14141411",
             borderRadius: "5px 5px 0 0",
             display: "flex",
@@ -55,7 +54,7 @@ const GiamSatChung = (props) => {
         <div
           style={{
             width: "100%",//1888px
-            height: "86.59%", //226px// Giảm height để có không gian cho BarChart
+            height: 226, //226px// Giảm height để có không gian cho BarChart
             padding: "10px",
             boxSizing: "border-box",
             display: "flex",
@@ -73,7 +72,7 @@ const GiamSatChung = (props) => {
             style={{
               // Width: "33.3%",//625px
               flex:1,
-              height: "96.6%",//218px
+              height: 218,//218px
               // border: "1px solid red",
               display: "flex",
               flexDirection: "column",
@@ -84,7 +83,7 @@ const GiamSatChung = (props) => {
             <div
               style={{
                 width: "95%",//590px
-                height: "12%",//26px
+                height: 26,//26px
                 boxSizing: "border-box",
                 borderBottom: "1px solid #c6c6c670",
                 display: "flex",
@@ -99,7 +98,7 @@ const GiamSatChung = (props) => {
             <div
               style={{
                 width: "95%",//590px
-                height: "88%",//192
+                height: 192,//192
                 display: "flex",
                 justifyContent: "space-between",
                 // border: "1px solid red",
@@ -108,7 +107,7 @@ const GiamSatChung = (props) => {
               <div
                 style={{
                   width: "57.6%",//340px
-                  height: "100%",//192px
+                  height: 192,//192px
                   // border: "1px solid green",
                   display: "flex",
                   flexDirection: "column",
@@ -120,7 +119,7 @@ const GiamSatChung = (props) => {
                 <div
                   style={{
                     width: "95%",//324px
-                    height: "30.2%",//58px
+                    height: 58,//58px
                     // border: "1px solid red",
                     boxSizing: "border-box",
                     display: "flex",
@@ -189,7 +188,7 @@ const GiamSatChung = (props) => {
                 <div
                   style={{
                     width: "95%",//324px
-                    height: "57.3%",//110px
+                    height: 110,//110px
                     flexDirection: "column",
                     display: "flex",
                     // border: "1px solid blue",
@@ -210,7 +209,7 @@ const GiamSatChung = (props) => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        height: "47%",//24px
+                        height: 24,//24px
                         color: "white",
                         fontSize: "13px",
                         fontFamily: "'Be Vietnam Pro', sans-serif",
@@ -223,7 +222,7 @@ const GiamSatChung = (props) => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        height: "53%",//27px
+                        height: 27,//27px
                         color: "#4FA336",fontSize:"0.875rem"
                         // fontWeight: "bold",
                       }}
@@ -233,7 +232,7 @@ const GiamSatChung = (props) => {
                   </div>
                   <div
                     style={{
-                      height: "48%",//51px
+                      height: 51,//51px
                       // border: "1px solid red",
                     }}
                   >
@@ -257,7 +256,7 @@ const GiamSatChung = (props) => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        height: "53%",//27px
+                        height: 27,//27px
                         color: "#4FA336",
                         fontWeight: "bold",
                       }}
@@ -270,7 +269,7 @@ const GiamSatChung = (props) => {
               <div
                 style={{
                   width: "70.6%",//240px
-                  height: "20vh",//192px
+                  height: 192,//192px
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -289,7 +288,7 @@ const GiamSatChung = (props) => {
           <div
             style={{
               // Width: "66.4%",// 1255px
-              height: "100%",// 218px
+              height: 218,// 218px
               // border: "1px solid red",
               display: "flex",
               flex:2,
@@ -301,7 +300,7 @@ const GiamSatChung = (props) => {
             <div
               style={{
                 width: "97%",//1220px
-                height: "12%",//26px
+                height: 26,//26px
                 fontSize: "14px",
                 display: "flex",
                 alignItems: "center",
@@ -311,7 +310,7 @@ const GiamSatChung = (props) => {
             >
               Thống kê số lượng thu hoạch theo từng nông trường (buồng)
             </div>
-            <div style={{ width: "97%", height: "88%", fontSize: "0.875rem",  }}>
+            <div style={{ width: "97%", height: 192, fontSize: "0.875rem",  }}>
               {" "}
               <HarvestBarChart />
             </div>
@@ -322,13 +321,12 @@ const GiamSatChung = (props) => {
       <div
         style={{
           width: "98.33%",//1888px
-          height: "30.81%",
+          height: 261,
           borderRadius: "5px 5px 0 0",
           boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
-          marginBottom: "15px",
+          marginBottom: "8px",
           fontSize: 14,
           fontFamily: "'Be Vietnam Pro', sans-serif",
-          
         }}
       >
         <Khudonggoi_gsc />
@@ -337,10 +335,10 @@ const GiamSatChung = (props) => {
       <div
         style={{
           width: "98.33%",//1888
-          height: "30.81%",//261
+          height: 261,//261
           borderRadius: "5px 5px 0 0",
           boxShadow: "0 2px 8px rgba(63, 63, 63, 0.15)",
-          marginBottom: "15px",
+          marginBottom: "8px",
         }}
       >
         <Khomat_gsc/>

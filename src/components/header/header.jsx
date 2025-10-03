@@ -6,6 +6,7 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 // import Menu from "../submenu/submenu2.jsx";
 // import Menu1 from "../submenu/TestSubMenu.jsx";
 import Menu1 from "../submenu/submenu2.jsx";
+import { Link } from "react-router-dom";
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -117,7 +118,7 @@ const Header = (props) => {
                 position: "relative",
               }}
             >
-              <div className="text-center ">Trang chủ</div>
+              <Link to={"/"} className="text-center ">Trang chủ</Link>
               <div
                 className="xuong flex justify-center items-center "
                 style={{
@@ -125,6 +126,7 @@ const Header = (props) => {
                   // color: "red",
                   // background: "yellow",
                   // height: "15px",
+                  cursor:"pointer"
                 }}
                 onClick={toggleMenu}
               >
@@ -136,6 +138,7 @@ const Header = (props) => {
                       top: "180%",
                       left: "50%",
                       transform: "translateX(-50%)",
+                      zIndex: 100
                     }}
                   >
                     <Menu1 />

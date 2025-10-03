@@ -16,7 +16,7 @@ const Barchart_thongke = (props) => {
     <div
       style={{
         width: "95%",
-        height: "20.16vh",
+        height: "190px",
         fontFamily: "'Be Vietnam Pro', sans-serif",
         display: "flex",
         justifyContent: "center",

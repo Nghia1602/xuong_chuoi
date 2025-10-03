@@ -113,10 +113,11 @@ const onClick = (e) => {
 const Menu1 = () => (
   <Menu
     onClick={onClick}
-    style={{ width: 256, borderRadius: 5 }}
+    
+    style={{ width: 256, borderRadius: 5 ,}}
     mode="vertical"
     items={items}
-    
+    getPopupContainer={() => document.body}
   />
 );
 export default Menu1;

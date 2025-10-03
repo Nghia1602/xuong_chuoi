@@ -5,24 +5,30 @@ import Tabs from "../Tabs/Tab";
 import Khutramcho from "../page/khuTramCho/khuTramCho";
 import PackagingArea from "../page/PackagingArea/PackagingArea";
 import GiamSatChung from "../page/giam_sat_chung/giamsatchung_xuongchuoi";
-import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
-
+// import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";
+import ChartTab from "../page/WaitingAreaData/Data/ChartTab";
+import Parameter from "../page/WaitingAreaData/Parameter/Parameter";
+import Modules from "../page/PackagingArea/Module/Module";
+import OverView from "../page/PackagingArea/Overview/Overview";
 const PageWrapper = () => {
-  const { vung, xuong, khu, tab } = useParams();
+  const { vung, xuong, khu, tab, subtab } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState(null);
-
+  console.log("Params:", { vung, xuong, khu, tab, subtab });
   useEffect(() => {
     fetch("/Data/Data.json")
       .then((res) => res.json())
       .then((json) => {
-        const khuData = json[vung]?.[xuong]?.[khu];
+        const khuData = json[vung]?.[xuong]?.[khu] || {}; 
         setData(khuData);
+        console.log("khuData",khuData)
+        if (khu === "khu-dong-goi" && tab === "giam-sat" && !subtab) {
+        navigate("tong-quan", { replace: true });
+      }
         if (khu && window.location.pathname.endsWith(khu)) {
           navigate(`giam-sat`, { replace: true });
         }
       });
-      
   }, [vung, xuong, khu]);
 
   if (!data) return <div>Loading...</div>;
@@ -31,32 +37,44 @@ const PageWrapper = () => {
   const renderContent = () => {
     switch (khu) {
       case "giam-sat-chung":
-        return tab === "giam-sat" ? (
-          <GiamSatChung data={data} />
-        ) : (
-          <WaitingAreaData data={data} />
-        );
+        return <GiamSatChung data={data} />;
       case "khu-tram-cho":
-        return tab === "giam-sat" ? (
-          <Khutramcho data={data} />
-        ) : (
-          <WaitingAreaData data={data} />
-        );
+        if (tab === "giam-sat") {
+          return <Khutramcho data={data} />;
+        }
+        if (tab === "du-lieu") {
+          // Check subtab
+          switch (subtab) {
+            case "thong-so":
+              return <Parameter data={data} />;
+            case "bieu-do":
+              return <ChartTab data={data} />;
+            default:
+              return <Parameter data={data} />;
+          }
+        }
       case "khu-dong-goi":
-        return tab === "giam-sat" ? (
-          <PackagingArea data={data} />
-        ) : (
-          <WaitingAreaData data={data} />
-        );
+       
+        if (tab === "giam-sat") {
+          // Check subtab
+          switch (subtab) {
+            case "tong-quan":
+              return <OverView data={data}/>;
+            case "module":
+              return <Modules  data={data}/>;
+            default:
+              return <OverView data={data} />;
+          }
+        }
       default:
-        return <div>Chưa có component cho {khu}</div>;
+        return <div className="w-full flex justify-center items-center">{khu} trống</div>;
     }
   };
 
   return (
-    <div style={{ width: "100%", }}>
+    <div style={{ width: "100%" }}>
       <Tabs /> {/* thanh tab */}
-      <div style={{ marginTop: "1rem" }}>{renderContent()}</div>
+      <div style={{ marginTop: "2rem", display:"flex", justifyContent:"center",  }}>{renderContent()}</div>
     </div>
   );
 };
