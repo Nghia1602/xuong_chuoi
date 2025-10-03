@@ -48,7 +48,7 @@ const OverView = ({data}) => {
           MODULE (THEO NGÀY)
         </div>
         <div className="w-[100%] h-[17rem]">
-          <TableData data={data["table-tongquan"]} />
+          <TableData rawData={data["table-tongquan"]} />
         </div>
       </div>
       <div className="w-[100%] h-[500px] flex   items-center flex-col overflow-x-auto">

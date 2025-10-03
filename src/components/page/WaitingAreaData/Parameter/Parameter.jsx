@@ -106,7 +106,7 @@ const Parameter = ({data}) => {
               Dữ liệu thống kê tổng thu hoạch
             </div>
             <div>
-              <DataStatistics Data={data["summary-thongso"]} />
+              <DataStatistics tableData={data["table-thongso1"]} />
             </div>
           </div>
         </div>

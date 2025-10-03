@@ -1,22 +1,56 @@
 import React from "react";
 import { Table, ConfigProvider, Empty } from "antd";
 import "./TableDataTotal.css";
-// const Data = [
-//   { name: "Số nông trường", value: 12, color: "bg-[#Ffff]" },
-//   { name: "Buồng đầu vào", value: 4110, color: "bg-[#FCD617]" },
-//   { name: "Buồng đạt", value: 3825, color: "bg-[#7DC241]" },
-//   { name: "Buồng lỗi", value: 258, color: "bg-[#EB1010]" },
-//   { name: "Khối lượng (tấn)", value: 13.347, color: "bg-[#6A8FD8]" },
-//   { name: "Năng suất (kg/buồng)", value: 32.86, color: "bg-[#5A9CCA]" },
-// ];
-const DataStatistics = ({ Data }) => {
-  // Định nghĩa cột
+
+const DataStatistics = ({ tableData }) => {
+  if (!tableData || !tableData.headers || !tableData.rows) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Empty description="No data" />
+      </div>
+    );
+  }
+
+  const numberOfFields = tableData.headers.length;
+
+  const dataTotal = tableData.rows.map((row) => {
+    let totalValue = row.value.reduce((sum, v) => sum + v, 0);
+
+    // Nếu là năng suất, chia cho số nông trường
+    if (row.name.toLowerCase().includes("năng suất")) {
+      totalValue = totalValue / numberOfFields;
+      // Làm tròn 2 chữ số thập phân
+      totalValue = Math.round(totalValue * 100) / 100;
+    }
+
+    return {
+      name: row.name,
+      value: totalValue,
+      color: row.color,
+    };
+  });
+
+  // Thêm row "Số nông trường"
+  dataTotal.unshift({
+    name: "Số nông trường",
+    value: numberOfFields,
+    color: "bg-[#FFFFFF]",
+  });
+
   const columns = [
     {
       dataIndex: "name",
       key: "name",
       width: "75%",
-      render: (text, record) => (
+      render: (text) => (
         <div
           className="truncate font-be-vietnam-pro text-sm"
           style={{
@@ -39,7 +73,6 @@ const DataStatistics = ({ Data }) => {
     },
   ];
 
-  // Thêm màu cho từng row dựa vào record.color
   const rowClassName = (record) => record.color;
 
   return (
@@ -54,23 +87,15 @@ const DataStatistics = ({ Data }) => {
     >
       <Table
         className="custom-tabletotal"
-        dataSource={Data}
+        dataSource={dataTotal}
         bordered
         columns={columns}
         pagination={false}
-        //   rowKey={(record) => record.name}
         rowClassName={rowClassName}
         rowKey="name"
-        //   size="small"
         style={{ width: "100%", tableLayout: "auto", height: "100%" }}
         scroll={{ x: 250 }}
-        //   bordered={false}
         showHeader={false}
-        locale={{
-          emptyText: (
-            <Empty description="No data" style={{ margin: "46px 0" }} />
-          ),
-        }}
       />
     </ConfigProvider>
   );

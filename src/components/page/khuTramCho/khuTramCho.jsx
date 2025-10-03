@@ -3,6 +3,7 @@ import FarmHarvestStatisticsChart from "./farmHarvestStatisticsChart";
 
 import TableData from "./tableData_tramCho";
 import DataStatistics from "./TableTotalData";
+
 // const tabledata_waitingarea = {
 //   headers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 //   rows: [
@@ -49,9 +50,7 @@ import DataStatistics from "./TableTotalData";
 const Khutramcho = ({ data }) => {
   if (!data) return <div>Không có dữ liệu</div>;
 
-  const tabledata_waitingarea = data.table;
-  console.log("tabledata_waitingarea:", tabledata_waitingarea);
-  const DataTotal = data.summary;
+  
   return (
     <div className="w-full h-full flex justify-center">
       <div className="w-[99.5%]  flex flex-col justify-center items-center gap-2">
@@ -61,7 +60,7 @@ const Khutramcho = ({ data }) => {
               Dữ liệu thống kê thu hoạch theo từng nông trường
             </div>
             <div className="w-[100%] h-[225px] border-[0.3px] border-[#c6c6c670] ">
-              <TableData rawData={tabledata_waitingarea} />
+              <TableData rawData={data["table"]} />
             </div>
           </div>
           <div className=" h-[260px] flex flex[1] justify-center flex-col rounded">
@@ -75,7 +74,7 @@ const Khutramcho = ({ data }) => {
                   <div className="w-[25%]  flex ml-1 items-center  font-be-vietnam-pro text-sm min-w-[80px]">{thongke.value}</div>
                 </div>
               ))} */}
-              <DataStatistics Data={DataTotal} />
+              <DataStatistics tableData={data.table} />
             </div>
           </div>
         </div>
