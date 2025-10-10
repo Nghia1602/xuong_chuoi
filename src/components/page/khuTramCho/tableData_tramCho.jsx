@@ -6,7 +6,7 @@ import { Table,  ConfigProvider, Empty } from "antd";
 
 const TableData = ({ rawData }) => {
    if (!rawData || !rawData.headers || !rawData.rows) {
-    return <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    return <div style={{ width: "100%", height: "225px", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Empty description="No data" />
     </div>;
   }

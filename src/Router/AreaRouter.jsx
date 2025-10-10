@@ -72,7 +72,7 @@ import {  Routes, Route } from "react-router-dom";
 import { Outlet, Navigate } from "react-router-dom";
 import PageWrapper from "../components/Test/PageWrapper";
 import Home from "../components/page/Home/Home";
-function AreaRouter() {
+function AreaRouter({setCurrentLocation}) {
   return (
     
       // <Routes>
@@ -93,10 +93,10 @@ function AreaRouter() {
     <Route index element={<Navigate to="giam-sat" replace />} />
 
     {/* Tab */}
-    <Route path=":tab" element={<PageWrapper />} />
+    <Route path=":tab" element={<PageWrapper setCurrentLocation={setCurrentLocation}/>} />
 
     {/* Subtab */}
-    <Route path=":tab/:subtab" element={<PageWrapper />} />
+    <Route path=":tab/:subtab" element={<PageWrapper setCurrentLocation={setCurrentLocation}/>} />
   </Route>
 </Routes>
 

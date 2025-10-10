@@ -7,7 +7,26 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 // import Menu1 from "../submenu/TestSubMenu.jsx";
 import Menu1 from "../submenu/submenu2.jsx";
 import { Link } from "react-router-dom";
-const Header = (props) => {
+
+const Header = ({ location }) => {
+  const { khu, xuong } = location;
+  console.log("location", location);
+  const locationName = (slug) => {
+    switch (slug) {
+      case "xuong-bp1-1":
+        return "Xưởng BP1-1";
+      case "xuong-bp1-2":
+        return "Xưởng BP1-2";
+      case "khu-tram-cho":
+        return "Khu trạm chờ";
+      case "giam-sat-chung":
+        return "Giám sát chung";
+      case "khu-dong-goi":
+        return "Khu đóng gói";
+      default:
+        return slug || "";
+    }
+  };
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -118,7 +137,9 @@ const Header = (props) => {
                 position: "relative",
               }}
             >
-              <Link to={"/"} className="text-center ">Trang chủ</Link>
+              <Link to={"/"} className="text-center ">
+                Trang chủ
+              </Link>
               <div
                 className="xuong flex justify-center items-center "
                 style={{
@@ -126,7 +147,7 @@ const Header = (props) => {
                   // color: "red",
                   // background: "yellow",
                   // height: "15px",
-                  cursor:"pointer"
+                  cursor: "pointer",
                 }}
                 onClick={toggleMenu}
               >
@@ -138,7 +159,7 @@ const Header = (props) => {
                       top: "180%",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      zIndex: 100
+                      zIndex: 100,
                     }}
                   >
                     <Menu1 />
@@ -266,8 +287,8 @@ const Header = (props) => {
         style={{ width: "1165px", height: "70px", background: "white" }}
       ></div> */}
       {/* VÙng */}
-      <div className="w-[12.24%] h-[4.375rem] flex items-center justify-center text-white">
-        GIÁM SÁT
+      <div className="w-[12.24%] h-[4.375rem] flex items-center justify-center text-white uppercase text-sm">
+        {locationName(xuong)} | {locationName(khu)}
       </div>
     </div>
   );

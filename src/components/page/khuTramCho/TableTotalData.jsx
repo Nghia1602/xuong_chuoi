@@ -8,7 +8,7 @@ const DataStatistics = ({ tableData }) => {
       <div
         style={{
           width: "100%",
-          height: "100%",
+          height: "225px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -20,10 +20,20 @@ const DataStatistics = ({ tableData }) => {
   }
 
   const numberOfFields = tableData.headers.length;
+  const getColorByName = (name) => {
+    if (name.includes("đầu vào")) return "bg-[#FCD617]";
+    if (name.includes("đạt")) return "bg-[#7DC241]";
+    if (name.includes("lỗi")) return "bg-[#EB1010]";
+    if (name.includes("Khối lượng")) return "bg-[#6A8FD8]";
+    if (name.includes("Năng suất")) return "bg-[#5A9CCA]";
+    return "bg-white"; // mặc định nếu không khớp tên
+  };
 
   const dataTotal = tableData.rows.map((row) => {
     let totalValue = row.value.reduce((sum, v) => sum + v, 0);
-
+if (row.name.toLowerCase().includes("khối lượng")){
+   totalValue = Math.round(totalValue * 100) / 100; // làm tròn 2 chữ số  
+}
     // Nếu là năng suất, chia cho số nông trường
     if (row.name.toLowerCase().includes("năng suất")) {
       totalValue = totalValue / numberOfFields;
@@ -34,7 +44,7 @@ const DataStatistics = ({ tableData }) => {
     return {
       name: row.name,
       value: totalValue,
-      color: row.color,
+      color: getColorByName(row.name),
     };
   });
 

@@ -7,7 +7,8 @@ import AreaRouter from "../../Router/AreaRouter";
 import Home from "../page/Home/Home";
 import Modules from "../page/PackagingArea/Module/Module";
 import OverView from "../page/PackagingArea/Overview/Overview";
-const Content = () => {
+
+const Content = ({setCurrentLocation}) => {
   return (
     <div
       style={{
@@ -24,7 +25,8 @@ const Content = () => {
       {/* <Khutramcho/> */}
       {/* <WaitingAreaData/> */}
       {/* <PackagingArea/> */}
-      <AreaRouter />
+      <AreaRouter setCurrentLocation={setCurrentLocation}/>
+      
       {/* <Modules/> */}
       {/* <OverView/> */}
       {/* <Home/> */}

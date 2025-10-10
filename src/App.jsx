@@ -4,10 +4,12 @@ import Header from "./components/header/header";
 // import Tabs from "./components/Tabs/Tab";
 import Content from "./components/content/content";
 import "./App.css";
+import PageWrapper from "./components/Test/PageWrapper";
 
 function App() {
   const [count, setCount] = useState(0);
-
+const [currentLocation, setCurrentLocation] = useState({xuong:"", khu:""})
+console.log("currenLocation", currentLocation)
   return (
     <>
       <div
@@ -19,10 +21,10 @@ function App() {
           flexDirection: "column",
         }}
       >
-        <Header style={{}} />
+        <Header style={{}} location={currentLocation}/>
         <div className="h-[882px] w-full">
           {/* <Tabs /> */}
-          <Content />
+          <Content setCurrentLocation={setCurrentLocation}/>
         </div>
       </div>
     </>

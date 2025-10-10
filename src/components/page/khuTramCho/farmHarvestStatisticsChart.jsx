@@ -50,7 +50,6 @@ const FarmHarvestStatisticsChart = ({ data }) => {
   const datasets = filteredRows.map((row) => {
     const colorMatch = row.color.match(/#([0-9A-Fa-f]{6})/);
     const color = colorMatch ? `#${colorMatch[1]}` : "#000000";
-
     // Quyết định kiểu dataset dựa vào name (ví dụ "Khối lượng" là line, còn lại bar)
     const isLine = row.name.includes("Khối lượng");
     const lineBorderWidth = 2; // ví dụ độ dày đường line
