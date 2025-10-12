@@ -8,7 +8,7 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 import Menu1 from "../submenu/submenu2.jsx";
 import { Link } from "react-router-dom";
 
-const Header = ({ location }) => {
+const Header = ({ location, onLoginClick }) => {
   const { khu, xuong } = location;
   console.log("location", location);
   const locationName = (slug) => {
@@ -261,7 +261,9 @@ const Header = ({ location }) => {
                       overflow: "hidden",
 
                       height: "1.25rem",
+                      
                     }}
+                    onClick={onLoginClick}
                   >
                     <i
                       className="fa-regular fa-user"

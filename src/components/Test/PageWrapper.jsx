@@ -19,33 +19,33 @@ const PageWrapper = ({ setCurrentLocation }) => {
 
   console.log("Params:", { vung, xuong, khu, tab, subtab });
 
-  useEffect(() => {
-    axios
-      .get("http://10.14.80.251:3001/api/v1/plc")
-      .then((res) => {
-        console.log("Dữ liệu PLC:", res.data);
-        // setPlcList(res.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
   // useEffect(() => {
-  //   if (setCurrentLocation) setCurrentLocation({ xuong, khu });
-  //   console.log("setCurrentLocation", setCurrentLocation);
-  //   fetch("/Data/Data.json")
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       const khuData = json[vung]?.[xuong]?.[khu] || {};
-  //       setData(khuData);
-  //       console.log("khuData", khuData);
-  //       if (khu === "khu-dong-goi" && tab === "giam-sat" && !subtab) {
-  //         navigate("tong-quan", { replace: true });
-  //       }
-  //       if (khu && window.location.pathname.endsWith(khu)) {
-  //         navigate(`giam-sat`, { replace: true });
-  //       }
-  //     });
-  // }, [vung, xuong, khu]);
+  //   axios
+  //     .get("http://10.14.80.251:3001/api/v1/plc")
+  //     .then((res) => {
+  //       console.log("Dữ liệu PLC:", res.data);
+  //       // setPlcList(res.data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
+
+  useEffect(() => {
+    if (setCurrentLocation) setCurrentLocation({ xuong, khu });
+    console.log("setCurrentLocation", setCurrentLocation);
+    fetch("/Data/Data.json")
+      .then((res) => res.json())
+      .then((json) => {
+        const khuData = json[vung]?.[xuong]?.[khu] || {};
+        setData(khuData);
+        console.log("khuData", khuData);
+        if (khu === "khu-dong-goi" && tab === "giam-sat" && !subtab) {
+          navigate("tong-quan", { replace: true });
+        }
+        if (khu && window.location.pathname.endsWith(khu)) {
+          navigate(`giam-sat`, { replace: true });
+        }
+      });
+  }, [vung, xuong, khu]);
 
   if (!data) return <div>Loading...</div>;
 
