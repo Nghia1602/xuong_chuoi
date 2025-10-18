@@ -33,7 +33,7 @@ const Header = ({ location, onLoginClick }) => {
   };
   return (
     <div className="flex items-center justify-center bg-[#398640]">
-      <div className="hidden sm:flex flex items-center w-[14.8%]">
+      <div className="hidden sm:flex flex items-center justify-center w-[14.8%]">
         <div className="w-[96%] h-[54px] flex items-center justify-center ">
           <img src="/images/logo_agri.png" className="h-[28px]" />
         </div>

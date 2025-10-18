@@ -58,7 +58,7 @@ const columns = [
   },
 ];
 
-// custom rowClassName để highlight dòng tổng
+
 const Modules = ({ data }) => {
   // custom rowClassName để highlight dòng tổng
   const rowClassName = (record) => {

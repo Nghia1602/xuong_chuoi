@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Tabs from "../Tabs/Tab";
 import axios from "axios";
 
-// import Khutramcho from "../page/khuTramCho/khuTramCho";
+import Khutramcho from "../page/khuTramCho/khuTramcho";
 import PackagingArea from "../page/PackagingArea/PackagingArea";
 import GiamSatChung from "../page/giam_sat_chung/giamsatchung_xuongchuoi";
 // import WaitingAreaData from "../page/WaitingAreaData/WaitingAreaData";

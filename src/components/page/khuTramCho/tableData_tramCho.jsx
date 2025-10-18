@@ -2,13 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "antd/dist/reset.css";
 import "./TableData.css";
-import { Table,  ConfigProvider, Empty } from "antd";
+import { Table, ConfigProvider, Empty } from "antd";
 
+const colorMap = {
+  "Năng suất buồng đạt": "bg-[#5A9CCA]",
+  "Tổng KL buồng đạt": "bg-[#6A8FD8]",
+  "Tổng số buồng": "bg-[#FCD617]",
+  "Tổng buồng đạt": "bg-[#7DC241]",
+  "Tổng buồng lỗi": "bg-[#EB1010]",
+};
 const TableData = ({ rawData }) => {
-   if (!rawData || !rawData.headers || !rawData.rows) {
-    return <div style={{ width: "100%", height: "225px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <Empty description="No data" />
-    </div>;
+  if (!rawData || !rawData.headers || !rawData.rows) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "225px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Empty description="No data" />
+      </div>
+    );
   }
   const columns = [
     {
@@ -17,10 +34,15 @@ const TableData = ({ rawData }) => {
       key: "name",
       fixed: "right",
       width: 200,
-      render: (text) => (
-        <span className=" whitespace-nowrap text-ellipsis font-medium ">
+      render: (text, record) => (
+        // 👇 SỬA ĐỔI Ở ĐÂY: Thêm class `record.color` vào div để áp dụng màu nền
+        <div
+          className={
+             `${record.color} whitespace-nowrap text-ellipsis font-medium` // ✅ Thêm record.color vào đây
+          }
+        >
           {text}
-        </span>
+        </div>
       ),
     },
     ...rawData.headers.map((header) => ({
@@ -43,7 +65,7 @@ const TableData = ({ rawData }) => {
     const rowData = {
       key: index,
       name: row.name,
-      color: row.color,
+      color: colorMap[row.name] || "",
     };
 
     rawData.headers.forEach((header, i) => {
@@ -56,26 +78,25 @@ const TableData = ({ rawData }) => {
   // === STEP 4: Render Table ===
   return (
     <ConfigProvider
-          theme={{
-            components: {
-              Table: {
-                headerBorderRadius: 0, 
-              },
-            },
-          }}
-        >
-    <Table
-      className="custom-table"
-      pagination={false}
-      bordered
-      columns={columns}
-      dataSource={dataSource}
-      rowClassName={rowClassName}
-      rowKey="name"
-      scroll={{ x: 1000 }}
-      
-      style={{ tableLayout: "auto", width: "100%", height: "100%" }}
-    />
+      theme={{
+        components: {
+          Table: {
+            headerBorderRadius: 0,
+          },
+        },
+      }}
+    >
+      <Table
+        className="custom-table"
+        pagination={false}
+        bordered
+        columns={columns}
+        dataSource={dataSource}
+        rowClassName={rowClassName}
+        rowKey="name"
+        scroll={{ x: 1000 }}
+        style={{ tableLayout: "auto", width: "100%", height: "100%" }}
+      />
     </ConfigProvider>
   );
 };
