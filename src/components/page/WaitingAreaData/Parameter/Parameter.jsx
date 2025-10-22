@@ -13,6 +13,8 @@ const Parameter = () => {
   const [selectedFarm, setSelectedFarm] = useState("1");
   const [rawDataTable, setRawDataTable] = useState(null);
   const [dataTongCong, setDataTongCong] = useState(null);
+  const [detailedData, setDetailedData] = useState(null);
+  const [farmOptions, setFarmOptions] = useState([]);
   // const [dateRange, setDateRange] = useState([
   //   dayjs().startOf("day"),
   //   dayjs().endOf("day"),
@@ -35,6 +37,27 @@ const Parameter = () => {
   const onChange = (date, dateString) => {
     setStartDate(dateString);
   };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       // ...existing api call code...
+  //       const { listnongtruong } = res.data.data;
+
+  //       // Transform farm data into Select options format
+  //       const options = listnongtruong.map((farm) => ({
+  //         value: farm.ma_nong_truong,
+  //         label: `Nông trường ${farm.ma_nong_truong}`,
+  //       }));
+
+  //       setFarmOptions(options);
+  //       // ...rest of existing code...
+  //     } catch (error) {
+  //       console.error("❌ Lỗi khi gọi API:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [startDate, selectedFarm, xuongId]);
   // Dữ liệu gốc
   useEffect(() => {
     const fetchData = async () => {
@@ -44,22 +67,25 @@ const Parameter = () => {
         // const endDate = dateRange[1]?.format("YYYY-MM-DD");
         console.log("🔄 Gọi API cho:", {
           startDate,
-          selectedFarm,
+          // selectedFarm,
           xuongId,
         });
         const res = await api.get("/tram-cho/thong-ke-tong-hop", {
           params: {
             startDate,
-            nongTruong: selectedFarm,
+            // nongTruong: selectedFarm,
             xuong_id: xuongId,
           },
         });
-        
+
         const { items, listnongtruong, tongcong } = res.data.data;
+        const options = listnongtruong.map((nt) => ({
+          value: nt.ma_nong_truong,
+          label: `Nông trường ${nt.ma_nong_truong}`,
+        }));
+        setFarmOptions(options);
         setDataTongCong(tongcong?.[0] || null);
-        const headers = listnongtruong.map(
-          (nt) => `Nông trường ${nt.ma_nong_truong}`
-        );
+        const headers = listnongtruong.map((nt) => `${nt.ma_nong_truong}`);
         console.log("✅ Dữ liệu nhận được:", res.data);
         setData(res.data);
         const dataMap = {};
@@ -105,18 +131,58 @@ const Parameter = () => {
         ];
 
         // ✅ Đặt rawData theo đúng cấu trúc TableData
-        setRawDataTable({                        
+        setRawDataTable({
           headers,
           rows,
         });
+        // const farmDetail = items.find(
+        //   (item) => item.ma_nong_truong === selectedFarm
+        // );
+        // setDetailedData(farmDetail || null);
       } catch (error) {
         console.error("❌ Lỗi khi gọi API:", error);
       }
     };
 
     fetchData();
-  }, [startDate, selectedFarm, xuongId]);
+  }, [startDate, xuongId]);
+  useEffect(() => {
+    if (
+      farmOptions.length > 0 &&
+      !farmOptions.find((opt) => opt.value === selectedFarm)
+    ) {
+      // Đặt mặc định là nông trường đầu tiên nếu nông trường hiện tại không có dữ liệu
+      setSelectedFarm(farmOptions[0].value);
+    }
+  }, [farmOptions]);
 
+  // useEffect(() => {
+  //   const fetchDetailedData = async () => {
+  //     try {
+  //       const token = localStorage.getItem("accessToken");
+  //       console.log("🔄 Gọi API chi tiết:", {
+  //         // startDate,
+  //         selectedFarm,
+  //         xuongId,
+  //       });
+  //       const res = await api.get("/tram-cho/thong-ke-chi-tiet", {
+  //         params: {
+  //           // startDate,
+  //           nongTruong: selectedFarm,
+  //           xuong_id: xuongId,
+  //         },
+  //       });
+
+  //       console.log("✅ Dữ liệu chi tiết nhận được:", res.data);
+  //       // 🆕 Giả định res.data.data có dạng { "2025-06-01": { rows: [...] }, ... }
+  //       setDetailedData(res.data.data || null);
+  //     } catch (error) {
+  //       console.error("❌ Lỗi khi gọi API chi tiết:", error);
+  //     }
+  //   };
+
+  //   fetchDetailedData();
+  // }, [selectedFarm, xuongId]);
   // const rawThongso1 = data?.["table-thongso1"]?.[selectDate] || null;
 
   return (
@@ -175,14 +241,15 @@ const Parameter = () => {
           <div>
             <Select
               labelInValue
-              defaultValue={{ value: "1", label: "Nông trường 1" }}
-              style={{ width: 150 }}
-              onChange={handleChange}
-              options={[
-                { value: "1", label: "Nông trường 1" },
-                { value: "2", label: "Nông trường 2" },
-                { value: "3", label: "Nông trường 3" },
-              ]}
+              value={
+                farmOptions.find((opt) => opt.value === selectedFarm) || {
+                  value: selectedFarm,
+                  label: `Nông trường ${selectedFarm}`,
+                }
+              }
+              style={{ width: 180 }}
+              onChange={(val) => setSelectedFarm(val.value)}
+              options={farmOptions}
             />
           </div>
           <div>
@@ -198,7 +265,7 @@ const Parameter = () => {
           </div>
           <div className="flex justify-center items-center h-[26rem] w-full overflow-hidden">
             <DetailedHarvestData
-              // rawData={data["table-thongso1"]}
+              rawData={data?.data} // hoặc rawDataTable nếu bạn muốn hiển thị theo bảng có sẵn
               selectedFarm={selectedFarm}
             />
           </div>

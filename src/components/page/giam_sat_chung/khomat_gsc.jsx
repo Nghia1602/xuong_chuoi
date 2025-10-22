@@ -42,8 +42,8 @@ const Khomat_gsc = (props) => {
       </div>
       <div
         style={{
-          height: "86.6%", //226px
-          width: 1888, //1888px
+          height: 226, //226px
+          width: "100%", //1888px
           display: "flex",
           alignItems: "center",
           //   justifyContent:"space-between",
@@ -54,7 +54,8 @@ const Khomat_gsc = (props) => {
       >
         <div
           style={{
-            width: "33%", //623px
+            display:"flex",
+            flex:1,//623px //623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
@@ -94,7 +95,8 @@ const Khomat_gsc = (props) => {
         {/* ----------------------Nhật Bản ----------------- */}
         <div
           style={{
-            width: "33%", //623px
+            display:"flex",
+            flex:1,//623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
@@ -134,14 +136,15 @@ const Khomat_gsc = (props) => {
         {/* ----------------------Trung Quốc ----------------- */}
         <div
           style={{
-            width: "33%", //623px
+            display:"flex",
+            flex:1,//623px //623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            borderRight: "1px solid #c6c6c670",
+            
             boxSizing: "border-box",
           }}
         >

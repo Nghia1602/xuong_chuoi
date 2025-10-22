@@ -54,18 +54,13 @@ const GiamSatChung = (props) => {
         <div
           style={{
             width: "100%",//1888px
-            height: 226, //226px// Giảm height để có không gian cho BarChart
+            height: 226, //226px
             padding: "10px",
             boxSizing: "border-box",
             display: "flex",
-            
             alignItems: "center",
             justifyContent: "center",
-            // border: "1px solid blue",
-            gap: "6px",
             
-            // flexWrap: "wrap",
-            // overflow: "auto"
           }}
         >
           <div
@@ -78,6 +73,7 @@ const GiamSatChung = (props) => {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              borderRight: "1px solid #c6c6c670",
             }}
           >
             <div
@@ -279,10 +275,6 @@ const GiamSatChung = (props) => {
               </div>
             </div>
           </div>
-
-
-
-
 
           {/* ------------------GIám sát chung 1-2---------------------- */}
           <div

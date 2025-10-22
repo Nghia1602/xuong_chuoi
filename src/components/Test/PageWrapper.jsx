@@ -12,6 +12,11 @@ import ChartTab from "../page/WaitingAreaData/Data/ChartTab";
 import Parameter from "../page/WaitingAreaData/Parameter/Parameter";
 import Modules from "../page/PackagingArea/Module/Module";
 import OverView from "../page/PackagingArea/Overview/Overview";
+import DetailStatisticsPackaging from "../page/PackagingArea/DataPackaging/DetailStatistics";
+import GeneralStatisticsPackaging from "../page/PackagingArea/DataPackaging/GeneralStatistics";
+import PlanningPackaging from "../page/PackagingArea/DataPackaging/Planning";
+import ChartPackaging from "../page/PackagingArea/DataPackaging/Chart";
+
 const PageWrapper = ({ setCurrentLocation }) => {
   const { vung, xuong, khu, tab, subtab } = useParams();
   const navigate = useNavigate();
@@ -79,6 +84,21 @@ const PageWrapper = ({ setCurrentLocation }) => {
               return <Modules data={data} />;
             default:
               return <OverView data={data} />;
+          }
+        }
+        if (tab === "du-lieu") {
+          // Check subtab
+          switch (subtab) {
+            case "ke-hoach":
+              return <PlanningPackaging data={data} />;
+            case "thong-ke-tong-hop":
+              return <GeneralStatisticsPackaging data={data} />;
+               case "thong-ke-chi-tiet":
+              return <DetailStatisticsPackaging data={data} />;
+            case "bieu-do":
+              return <ChartPackaging data={data} />;
+            default:
+              return <PlanningPackaging data={data} />;
           }
         }
       default:

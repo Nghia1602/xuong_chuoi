@@ -74,10 +74,10 @@ import {
 //   },
 // ];
 
-const ActualBoxQuantityAndTargetQuantity = ({ data }) => {
+const ActualVsPlannedBoxQuantity = ({ data }) => {
   return (
     <div className="w-full overflow-x-auto">
-      <div style={{ minWidth: "1200px", height: "464px" }}>
+      <div style={{ minWidth: "1200px", height: "430px" }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
@@ -132,4 +132,4 @@ const ActualBoxQuantityAndTargetQuantity = ({ data }) => {
   );
 };
 
-export default ActualBoxQuantityAndTargetQuantity;
+export default ActualVsPlannedBoxQuantity;

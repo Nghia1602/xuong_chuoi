@@ -73,75 +73,75 @@ const data = [
 const COLORS = ["#2ecc71", "#d9d9d9"];
 
 const DonutChart = () => {
-  const containerRef = useRef(null);
-  const [radius, setRadius] = useState({ inner: 0, outer: 0 });
+  // const containerRef = useRef(null);
+  // const [radius, setRadius] = useState({ inner: 0, outer: 0 });
 
-  useEffect(() => {
-    function updateRadius() {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        // Lấy min chiều rộng và chiều cao để giữ hình tròn
-        const minSize = Math.min(width, height);
-        // Đặt bán kính outer khoảng 45% của minSize, inner khoảng 30%
-        setRadius({
-          outer: minSize * 0.4,
-          inner: minSize * 0.3,
-        });
-      }
-    }
-    updateRadius();
-    window.addEventListener("resize", updateRadius);
-    return () => window.removeEventListener("resize", updateRadius);
-  }, []);
-  const renderLegend = (props) => {
-    const { payload } = props;
-    return (
-      <ul
-        style={{
-          listStyle: "none",
-          margin: 0,
-          padding: 0,
-          fontSize: radius.inner * 0.2,
-          color: "#333",
-        }}
-      >
-        {payload.map((entry, index) => (
-          <li
-            key={`item-${index}`}
-            style={{
-              color: entry.color,
-              marginBottom: 4,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                width: 14,
-                height: 14,
-                backgroundColor: entry.color,
-                marginRight: 8,
-                borderRadius: entry.type === "square" ? 2 : "50%",
-              }}
-            ></div>
-            {entry.value}
-          </li>
-        ))}
-      </ul>
-    );
-  };
+  // useEffect(() => {
+  //   function updateRadius() {
+  //     if (containerRef.current) {
+  //       const { width, height } = containerRef.current.getBoundingClientRect();
+  //       // Lấy min chiều rộng và chiều cao để giữ hình tròn
+  //       const minSize = Math.min(width, height);
+  //       // Đặt bán kính outer khoảng 45% của minSize, inner khoảng 30%
+  //       setRadius({
+  //         outer: minSize * 0.4,
+  //         inner: minSize * 0.3,
+  //       });
+  //     }
+  //   }
+  //   updateRadius();
+  //   window.addEventListener("resize", updateRadius);
+  //   return () => window.removeEventListener("resize", updateRadius);
+  // }, []);
+  // const renderLegend = (props) => {
+  //   const { payload } = props;
+  //   return (
+  //     <ul
+  //       style={{
+  //         listStyle: "none",
+  //         margin: 0,
+  //         padding: 0,
+  //         fontSize: 14,
+  //         color: "#333",
+  //       }}
+  //     >
+  //       {payload.map((entry, index) => (
+  //         <li
+  //           key={`item-${index}`}
+  //           style={{
+  //             color: entry.color,
+  //             marginBottom: 4,
+  //             display: "flex",
+  //             alignItems: "center",
+  //             justifyContent: "center",
+  //           }}
+  //         >
+  //           <div
+  //             style={{
+  //               width: 14,
+  //               height: 14,
+  //               backgroundColor: entry.color,
+  //               marginRight: 8,
+  //               borderRadius: entry.type === "square" ? 2 : "50%",
+  //             }}
+  //           ></div>
+  //           {entry.value}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // };
 
   return (
-    <div ref={containerRef} style={{ width: "10vw", height: "10vw" }}>
+    <div  style={{ width: "100%", height: "192px" }}>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={radius.inner}
-            outerRadius={radius.outer}
+            innerRadius={50}
+            outerRadius={70}
             paddingAngle={3}
             dataKey="value"
           >
@@ -155,11 +155,11 @@ const DonutChart = () => {
               value={`${data[0].value}%`}
               position="center"
               fill="#2ecc71"
-              fontSize={radius.inner * 0.25}
+              fontSize={14}
             />
           </Pie>
           <Legend
-            content={renderLegend}
+            // content={renderLegend}
             payload={[
               {
                 value: "Buồng đạt",

@@ -18,8 +18,12 @@ const Login = ({ onClose }) => {
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("refreshToken", refreshToken);
       // Kiểm tra và lưu token
-      
-      onClose({ ...user, accessToken: accessToken,refreshToken:refreshToken  });  // ✅ userData giờ sẽ có user info và token
+
+      onClose({
+        ...user,
+        accessToken: accessToken,
+        refreshToken: refreshToken,
+      }); // ✅ userData giờ sẽ có user info và token
 
       alert("Đăng nhập thành công!");
       // Vui lòng đảm bảo bạn đã xóa dòng onClose() thứ hai như đã hướng dẫn trước đó
@@ -49,15 +53,17 @@ const Login = ({ onClose }) => {
           &times;
         </button>
 
-        <div className="flex flex-col justify-center items-center items-center w-[50%] h-full">
-          <div>
+        <div className="flex flex-col  justify-center items-center items-center w-[50%] h-full">
+          <div className="pb-[5px]">
             <img
               src="/images/logo_login_thaco_agri.png"
               className="h-[100px]"
             />
           </div>
-          <div></div>
-          <div className="flex flex-col justify-center gap-5 h-[200px] ">
+          <div className="h-[2.5rem] text-[1.5rem] font-bold text-[#66BA11] text-be-vietnam-pro flex items-center">
+            Đăng nhập
+          </div>
+          <div className="flex flex-col justify-between gap-5 h-[150px] ">
             <input
               type="text"
               placeholder="Tên hoặc MSNV"
@@ -81,7 +87,11 @@ const Login = ({ onClose }) => {
           {error && <p className="text-red-500 mt-3">{error}</p>}
           <div></div>
         </div>
-        <div className="bg-[#66BA11] w-[50%] rounded-l-[40px] rounded-r-[30px]"></div>
+        <div className="bg-[#66BA11] w-[50%] rounded-l-[40px] rounded-r-[30px] gap-3 flex flex-col justify-center items-center">
+          <span className="font-bold text-white text-[20px]">Xin chào!</span>
+          <span className="text-white text-[16px] w-[80%] text-center" >Tạo tài khoản để truy cập toàn bộ tính năng của trang web</span>
+          <button className="bg-[#66BA11] text-white cusor-pointer w-[30%] h-[30px] rounded-[5px] border border-1-white">Đăng ký</button>
+        </div>
       </div>
     </div>
   );

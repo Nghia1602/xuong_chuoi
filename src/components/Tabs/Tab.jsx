@@ -3,6 +3,7 @@ import React, { Children } from "react";
 import { useParams } from "react-router-dom";
 import SubmenuTab from "./submenuTab";
 import { DesktopOutlined, BarChartOutlined } from "@ant-design/icons";
+import path from "path";
 
 const Tabs = () => {
   const { khu } = useParams();
@@ -34,7 +35,12 @@ const Tabs = () => {
           { path: "module", label: "Module" },
         ],
       },
-      { path: "du-lieu", label: "Dữ liệu", icon: <BarChartOutlined /> },
+      { path: "du-lieu", label: "Dữ liệu", icon: <BarChartOutlined />, children:[
+        {path: "ke-hoach", label: "Kế hoạch"},
+        {path: "thong-ke-tong-hop", label: "Thống kê tổng hợp"},
+        {path: "thong-ke-chi-tiet", label: "Thống kê chi tiết"},
+        {path: "bieu-do", label: "Biểu đồ"},
+      ] },
     ],
   };
 

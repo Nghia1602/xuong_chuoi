@@ -12,31 +12,31 @@ import {
 const COLORS = ["#BB0E3D", "#FFD441"];
 
 const DonutChart_khomat_gsc = ({ data }) => {
-  const containerRef = useRef(null);
-  const [radius, setRadius] = useState({ inner: 60, outer: 80 }); // Giá trị mặc định
+  // const containerRef = useRef(null);
+  // const [radius, setRadius] = useState({ inner: 60, outer: 80 }); // Giá trị mặc định
 
   const total = data.reduce((acc, item) => acc + item.value, 0);
 
-  useEffect(() => {
-    const updateRadius = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        const minSize = Math.min(width, height);
-        setRadius({
-          inner: minSize * 0.3,
-          outer: minSize * 0.4,
-        });
-      }
-    };
+  // useEffect(() => {
+  //   const updateRadius = () => {
+  //     if (containerRef.current) {
+  //       const { width, height } = containerRef.current.getBoundingClientRect();
+  //       const minSize = Math.min(width, height);
+  //       setRadius({
+  //         inner: minSize * 0.3,
+  //         outer: minSize * 0.4,
+  //       });
+  //     }
+  //   };
 
-    updateRadius();
-    window.addEventListener("resize", updateRadius);
-    return () => window.removeEventListener("resize", updateRadius);
-  }, []);
+  //   updateRadius();
+  //   window.addEventListener("resize", updateRadius);
+  //   return () => window.removeEventListener("resize", updateRadius);
+  // }, []);
 
   return (
     <div
-      ref={containerRef}
+      // ref={containerRef}
       style={{
         width: "100%",
         height: 174,
@@ -49,8 +49,8 @@ const DonutChart_khomat_gsc = ({ data }) => {
         <PieChart>
           <Pie
             data={data}
-            innerRadius={radius.inner}
-            outerRadius={radius.outer}
+            innerRadius={60}
+            outerRadius={80}
             paddingAngle={1}
             dataKey="value"
             nameKey="name"
@@ -66,7 +66,7 @@ const DonutChart_khomat_gsc = ({ data }) => {
               position="center"
               style={{
                 fill: "#333",
-                fontSize: radius.inner * 0.25,
+                fontSize: 14,
                 fontWeight: "bold",
               }}
             />

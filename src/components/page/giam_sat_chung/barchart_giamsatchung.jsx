@@ -87,37 +87,33 @@ const data = [
 ];
 
 const HarvestBarChart = () => {
-  const containerRef = useRef(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [barSize, setBarSize] = useState(30);
-  const [fontSize, setFontSize] = useState(14);
+  // useEffect(() => {
+  //   const updateDimensions = () => {
+  //     if (containerRef.current) {
+  //       const { width, height } = containerRef.current.getBoundingClientRect();
+  //       setDimensions({ width, height });
+  //       // Tính barSize theo chiều rộng và số cột
+  //       const calculatedBarSize = Math.min(50, width / data.length - 10);
+  //       setBarSize(calculatedBarSize > 10 ? calculatedBarSize : 10);
 
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        setDimensions({ width, height });
-        // Tính barSize theo chiều rộng và số cột
-        const calculatedBarSize = Math.min(50, width / data.length - 10);
-        setBarSize(calculatedBarSize > 10 ? calculatedBarSize : 10);
+  //       // Tính fontSize label theo chiều cao container
+  //       const calculatedFontSize = Math.min(16, height * 0.4);
+  //       setFontSize(calculatedFontSize > 8 ? calculatedFontSize : 8);
+  //     }
+  //   };
 
-        // Tính fontSize label theo chiều cao container
-        const calculatedFontSize = Math.min(16, height * 0.4);
-        setFontSize(calculatedFontSize > 8 ? calculatedFontSize : 8);
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
+  //   updateDimensions();
+  //   window.addEventListener("resize", updateDimensions);
+  //   return () => window.removeEventListener("resize", updateDimensions);
+  // }, []);
+  const fontSize = 14;
+  
   return (
     <div
-      ref={containerRef}
+      // ref={containerRef}
       style={{
-        width: "63vw", // bạn tùy chỉnh kích thước container theo ý muốn
-        height: "20vh",
+        width: "100%", // bạn tùy chỉnh kích thước container theo ý muốn
+        height: "205px",
         fontFamily: "'Be Vietnam Pro', sans-serif",
         color: "#000",
         display: "flex",
@@ -127,8 +123,8 @@ const HarvestBarChart = () => {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-          barSize={barSize}
+          margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+          barSize={40}
         >
           <CartesianGrid vertical={false} horizontal={true} />
           <XAxis dataKey="name" tick={{ dy: 10, fontSize }} tickLine={false} />

@@ -8,7 +8,7 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 import Menu1 from "../submenu/submenu2.jsx";
 import { Link } from "react-router-dom";
 
-const Header = ({ location, onLoginClick }) => {
+const Header = ({ location, onLoginClick, user }) => {
   const { khu, xuong } = location;
   console.log("location", location);
   const locationName = (slug) => {
@@ -235,9 +235,16 @@ const Header = ({ location, onLoginClick }) => {
                   height: "100%",
                 }}
               >
-                <div className="text-center font-be-vietnam-pro text-white hidden sx:flex">
-                  Trần Văn Nghĩa
-                </div>
+                {user ? (
+                  <div className="text-center font-be-vietnam-pro text-white hidden sx:flex">
+                    {user.displayName || user.username}
+                  </div>
+                ) : (
+                  <div className="text-center font-be-vietnam-pro text-white hidden sx:flex">
+                    Đăng nhập
+                  </div>
+                )}
+
                 <div
                   style={{
                     background: "#c6c6c669",
@@ -259,9 +266,8 @@ const Header = ({ location, onLoginClick }) => {
                       justifyContent: "center",
                       alignItems: "center",
                       overflow: "hidden",
-
+                      cursor: "pointer",
                       height: "1.25rem",
-                      
                     }}
                     onClick={onLoginClick}
                   >

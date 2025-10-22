@@ -38,7 +38,7 @@ const TableData = ({ rawData }) => {
         // 👇 SỬA ĐỔI Ở ĐÂY: Thêm class `record.color` vào div để áp dụng màu nền
         <div
           className={
-             `${record.color} whitespace-nowrap text-ellipsis font-medium` // ✅ Thêm record.color vào đây
+             ` whitespace-nowrap text-ellipsis font-medium` // ✅ Thêm record.color vào đây
           }
         >
           {text}

@@ -16,6 +16,7 @@ function App() {
   });
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const openLogin = () => setIsLoginOpen(true);
+  
   const closeLogin = (user) => {
     setIsLoginOpen(false);
     // if (userInfo) {
@@ -23,24 +24,31 @@ function App() {
     //   console.log("Thông tin đăng nhập:", userInfo);
     // }
     // ✅ nếu user đăng nhập thành công thì lưu luôn
-    if (user) {
-      setUserData(user);
+     if (user) {
+      // ✅ Lưu thông tin user
+      const displayName = user.displayName || "Admin"; // hoặc lấy từ user.name nếu BE trả về
+      const updatedUser = { ...user, displayName };
+
+      setUserData(updatedUser);
+      localStorage.setItem("accessToken", user.accessToken);
+      console.log("Đăng nhập thành công:", updatedUser);
     } else {
       console.log("Đóng login mà không đăng nhập");
     }
   };
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
     if (token) {
       api
         .get("/users/me")
         .then((res) => setUserData(res.data))
-        .catch(() => localStorage.removeItem("token"));
+        .catch(() => localStorage.removeItem("accessToken"));
     }
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     setUserData(null);
     setIsLoginOpen(true);
   };
@@ -67,12 +75,12 @@ function App() {
         <div className="h-[882px] w-full">
           {/* <Tabs /> */}
           <Content setCurrentLocation={setCurrentLocation} />
-          {userData && (
+          {/* {userData && (
             <div style={{ padding: 20 }}>
               <h3>Thông tin người dùng:</h3>
               <pre>{JSON.stringify(userData, null, 2)}</pre>
             </div>
-          )}
+          )} */}
           {/* <Login /> */}
           {isLoginOpen && <Login onClose={closeLogin} />}
         </div>
