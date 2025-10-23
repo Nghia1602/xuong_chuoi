@@ -36,15 +36,15 @@ function App() {
       console.log("Đóng login mà không đăng nhập");
     }
   };
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      api
-        .get("/users/me")
-        .then((res) => setUserData(res.data))
-        .catch(() => localStorage.removeItem("accessToken"));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("accessToken");
+  //   if (token) {
+  //     api
+  //       .get("/users/me")
+  //       .then((res) => setUserData(res.data))
+  //       .catch(() => localStorage.removeItem("accessToken"));
+  //   }
+  // }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");

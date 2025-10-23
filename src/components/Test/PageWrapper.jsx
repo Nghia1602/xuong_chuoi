@@ -43,14 +43,33 @@ const PageWrapper = ({ setCurrentLocation }) => {
         const khuData = json[vung]?.[xuong]?.[khu] || {};
         setData(khuData);
         console.log("khuData", khuData);
-        if (khu === "khu-dong-goi" && tab === "giam-sat" && !subtab) {
-          navigate("tong-quan", { replace: true });
-        }
-        if (khu && window.location.pathname.endsWith(khu)) {
-          navigate(`giam-sat`, { replace: true });
-        }
-      });
-  }, [vung, xuong, khu]);
+        const defaultSubtabMap = {
+        "khu-dong-goi": {
+          "giam-sat": "tong-quan",
+          "du-lieu": "ke-hoach",
+        },
+        "khu-tram-cho": {
+          "giam-sat": "tong-quan",
+          "du-lieu": "thong-so",
+        },
+        "giam-sat-chung": {
+          "giam-sat": "tong-quan",
+        },
+      };
+      if (khu && !tab) {
+        navigate("giam-sat", { replace: true });
+        return;
+      }
+
+      // ✅ 3. Nếu có tab mà chưa có subtab → tự vào subtab đầu tiên
+      const defaultSub = defaultSubtabMap[khu]?.[tab];
+      if (khu && tab && !subtab && defaultSub) {
+        navigate(defaultSub, { replace: true });
+        return;
+      }
+    })
+    .catch((err) => console.error("Lỗi khi load Data.json:", err));
+}, [vung, xuong, khu, tab, subtab]);
 
   if (!data) return <div>Loading...</div>;
 
