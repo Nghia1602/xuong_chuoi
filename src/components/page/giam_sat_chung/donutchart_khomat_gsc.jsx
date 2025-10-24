@@ -58,7 +58,7 @@ const DonutChart_khomat_gsc = ({ data }) => {
             label={({ value }) => value}
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index]} />
+              <Cell key={`cell-${index}`} fill={COLORS[index]} style={{fontWeight:"bold"}} />
             ))}
 
             <Label

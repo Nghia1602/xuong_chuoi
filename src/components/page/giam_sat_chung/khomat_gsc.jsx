@@ -117,7 +117,7 @@ const Khomat_gsc = (props) => {
               alignItems: "center",
             }}
           >
-            Thống kê số thùng chuối trong kho (Thùng)
+            Thống kê số thùng chuối nhập kho trong ngày (Thùng)
           </div>
           <div
             style={{
@@ -158,7 +158,7 @@ const Khomat_gsc = (props) => {
               alignItems: "center",
             }}
           >
-            Thống kê số thùng chuối trong kho (Thùng)
+            Thống kê số thùng chuối xuất kho trong ngày (Thùng)
           </div>
           <div
             style={{

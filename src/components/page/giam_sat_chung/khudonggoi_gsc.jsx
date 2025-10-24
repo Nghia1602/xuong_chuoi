@@ -287,6 +287,7 @@ const Khudonggoi_gsc = (props) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            fontWeight: "bold",
           }}
         >
           <div
@@ -618,6 +619,7 @@ const Khudonggoi_gsc = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            fontWeight: 'medium',
           }}
         >
           <div
