@@ -5,7 +5,16 @@ import HarvestBarChart from "./barchart_giamsatchung";
 import Khudonggoi_gsc from "./khudonggoi_gsc";
 import Khomat_gsc from "./khomat_gsc";
 const GiamSatChung = (props) => {
-  
+  const currentUrl = window.location.href;
+  const thongKeChungDataBP1_1= [
+    { label: "Buồng đầu vào", value: 2173,  },
+    { label: "Buồng đạt", value: 1990, },
+  ];
+  const thongKeChungDataBP1_2= [
+    { label: "Buồng đầu vào", value: 3297,  },
+    { label: "Buồng đạt", value: 2910, },
+  ];
+  const thongKeChungData= currentUrl.includes("bp1-1")? thongKeChungDataBP1_1 : thongKeChungDataBP1_2;
   return (
     <div
       style={{
@@ -141,7 +150,7 @@ const GiamSatChung = (props) => {
                         fontWeight: "bold",
                       }}
                     >
-                      2173
+                      {thongKeChungData[0].value}
                     </div>
                     <div
                       style={{
@@ -168,7 +177,7 @@ const GiamSatChung = (props) => {
                         fontWeight: "bold",
                       }}
                     >
-                      1990
+                     {thongKeChungData[1].value}
                     </div>
                     <div
                       style={{
@@ -271,7 +280,7 @@ const GiamSatChung = (props) => {
                   alignItems: "center",
                 }}
               >
-                <DonutChart />
+                <DonutChart data={thongKeChungData} />
               </div>
             </div>
           </div>
