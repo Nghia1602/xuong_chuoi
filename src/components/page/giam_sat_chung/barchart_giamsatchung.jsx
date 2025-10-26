@@ -76,17 +76,9 @@ import {
   LabelList,
 } from "recharts";
 
-const data = [
-  { name: "1", value: 310 },
-  { name: "2", value: 300 },
-  { name: "3", value: 315 },
-  { name: "4", value: 313 },
-  { name: "5", value: 304 },
-  { name: "6", value: 325 },
-  { name: "7", value: 306 },
-];
 
-const HarvestBarChart = () => {
+
+const HarvestBarChart = ({data}) => {
   // useEffect(() => {
   //   const updateDimensions = () => {
   //     if (containerRef.current) {
@@ -129,7 +121,7 @@ const HarvestBarChart = () => {
           <CartesianGrid vertical={false} horizontal={true} />
           <XAxis dataKey="name" tick={{ dy: 10, fontSize }} tickLine={false} />
           <YAxis
-            domain={[280, 360]}
+            // domain={[280, 360]}
             tick={{ fontFamily: "Be Vietnam Pro", fontSize }}
             label={{
               value: "Nông trường",

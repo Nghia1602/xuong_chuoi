@@ -11,3 +11,6 @@
   table-layout: auto !important;
   
 }
+.custom-table .ant-table-tbody > tr > td {
+  background-color: inherit !important; /* kế thừa màu nền từ <tr> */
+}

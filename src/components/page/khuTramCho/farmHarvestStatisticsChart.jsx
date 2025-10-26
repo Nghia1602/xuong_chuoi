@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { Chart } from "react-chartjs-2";
 import { Empty } from "antd";
+import { Label } from "recharts";
 ChartJS.register(
   BarElement,
   LineElement,
@@ -43,15 +44,19 @@ const FarmHarvestStatisticsChart = ({ data }) => {
   console.log("Chart Data:", data);
   // Chuyển row thành dataset
   const wantedRows = ["Buồng đầu vào", "Buồng đạt", "Khối lượng (tấn)"];
-
+  const colorMap = {
+    "Buồng đầu vào": "#FCD617", // xanh lam
+    "Buồng đạt": "#7DC241", // xanh lá
+    "Khối lượng (tấn)": "#6A8FD8", // tím xanh
+  };
   const filteredRows = data.table.rows.filter((row) =>
     wantedRows.includes(row.name)
   );
   const datasets = filteredRows.map((row) => {
-    const colorMatch = row.color.match(/#([0-9A-Fa-f]{6})/);
-    const color = colorMatch ? `#${colorMatch[1]}` : "#000000";
+    const color = colorMap[row.name] || "#000000";
+    const isLine = row.name === "Khối lượng (tấn)";
     // Quyết định kiểu dataset dựa vào name (ví dụ "Khối lượng" là line, còn lại bar)
-    const isLine = row.name.includes("Khối lượng");
+
     const lineBorderWidth = 2; // ví dụ độ dày đường line
     const barBorderWidth = 0.3; // độ dày viền bar
     // Tạo datasets theo kiểu bạn muốn
@@ -67,7 +72,6 @@ const FarmHarvestStatisticsChart = ({ data }) => {
       borderRadius: isLine ? 0 : 4,
       barThickness: isLine ? undefined : 20,
       order: isLine ? 1 : 2,
-      
     };
   });
   const chartData = {
@@ -84,7 +88,20 @@ const FarmHarvestStatisticsChart = ({ data }) => {
     },
     stacked: false,
     scales: {
-      x: { grid: { display: false }  },
+      x: {
+        grid: { display: false },
+        // title: {
+        //   display: true,
+        //   // text: "Nông trường",
+        //   align: "start",
+        // //  padding:{ top: 0, bottom: 10 },
+        //   color: "#333",
+        //   font: {
+        //     size: 14,
+        //     weight: "bold",
+        //   },
+        // },
+      },
       y: {
         type: "linear",
         position: "left",
@@ -104,7 +121,7 @@ const FarmHarvestStatisticsChart = ({ data }) => {
       },
     },
     plugins: {
-      legend: { position: "top",  },
+      legend: { position: "top" },
     },
   };
 

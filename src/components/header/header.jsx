@@ -240,7 +240,10 @@ const Header = ({ location, onLoginClick, user }) => {
                     {user.displayName || user.username}
                   </div>
                 ) : (
-                  <div className="text-center font-be-vietnam-pro text-white hidden sx:flex">
+                  <div
+                    className="text-center font-be-vietnam-pro text-white hidden sx:flex cursor-pointer"
+                    onClick={onLoginClick}
+                  >
                     Đăng nhập
                   </div>
                 )}

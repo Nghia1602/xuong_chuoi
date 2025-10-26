@@ -10,36 +10,32 @@
               "name": "Buồng đầu vào",
               "value": [
                 310, 337, 345, 302, 348, 322, 300, 379, 349, 381, 424, 313
-              ],
-              "color": "bg-[#FCD617]"
+              ]
+              
             },
             {
               "name": "Buồng đạt",
               "value": [
                 304, 293, 326, 295, 345, 283, 275, 352, 320, 358, 390, 284
-              ],
-              "color": "bg-[#7DC241]"
+              ]
             },
             {
               "name": "Buồng lỗi",
-              "value": [6, 44, 19, 7, 3, 39, 25, 27, 29, 23, 34, 29],
-              "color": "bg-[#EB1010]"
+              "value": [6, 44, 19, 7, 3, 39, 25, 27, 29, 23, 34, 29]
             },
             {
               "name": "Khối lượng (tấn)",
               "value": [
                 10.7, 9.81, 11.38, 9.68, 12.45, 9.74, 9.32, 12.5, 10.46, 13.0,
                 13.1, 9.87
-              ],
-              "color": "bg-[#6A8FD8]"
+              ]
             },
             {
               "name": "Năng suất (kg/buồng)",
               "value": [
                 35.2, 33.5, 34.9, 32.8, 36.1, 34.4, 33.9, 35.5, 32.7, 36.3,
                 33.6, 34.74
-              ],
-              "color": "bg-[#5A9CCA]"
+              ]
             }
           ]
         },
@@ -529,18 +525,125 @@
           ]
         },
         "linechart-chart1": [
-          { "name": "01/09/2025", "uv": 4100, "amt": 2600 },
-          { "name": "02/09/2025", "uv": 3200, "amt": 2400 },
-          { "name": "03/09/2025", "uv": 2100, "amt": 2000 },
-          { "name": "04/09/2025", "uv": 2950, "amt": 2250 },
-          { "name": "05/09/2025", "uv": 2050, "amt": 2180 },
-          { "name": "06/09/2025", "uv": 2700, "amt": 2300 },
-          { "name": "07/09/2025", "uv": 3600, "amt": 2450 },
-          { "name": "08/09/2025", "uv": 2150, "amt": 2000 },
-          { "name": "09/09/2025", "uv": 2750, "amt": 2350 },
-          { "name": "10/09/2025", "uv": 3300, "amt": 2500 },
-          { "name": "11/09/2025", "uv": 3050, "amt": 2400 },
-          { "name": "12/09/2025", "uv": 2850, "amt": 2150 }
+            
+            { "name": "02/10/2025", "buongvao": 3100, "buongdat": 2398, "buongloi": 702, "khoiluong": 76.3, "nongTruong": 1 },
+            { "name": "02/10/2025", "buongvao": 2800, "buongdat": 2200, "buongloi": 600, "khoiluong": 68.5, "nongTruong": 2 },
+            { "name": "02/10/2025", "buongvao": 2950, "buongdat": 2500, "buongloi": 450, "khoiluong": 72.0, "nongTruong": 3 },
+
+            { "name": "03/10/2025", "buongvao": 3400, "buongdat": 2500, "buongloi": 900, "khoiluong": 78.2, "nongTruong": 1 },
+            { "name": "03/10/2025", "buongvao": 2900, "buongdat": 2100, "buongloi": 800, "khoiluong": 70.0, "nongTruong": 2 },
+            { "name": "03/10/2025", "buongvao": 3100, "buongdat": 2600, "buongloi": 500, "khoiluong": 73.5, "nongTruong": 3 },
+
+            { "name": "04/10/2025", "buongvao": 3200, "buongdat": 2200, "buongloi": 1000, "khoiluong": 74.5, "nongTruong": 1 },
+            { "name": "04/10/2025", "buongvao": 3050, "buongdat": 2300, "buongloi": 750, "khoiluong": 72.3, "nongTruong": 2 },
+            { "name": "04/10/2025", "buongvao": 3005, "buongdat": 2400, "buongloi": 605, "khoiluong": 71.4, "nongTruong": 3 },
+
+            { "name": "05/10/2025", "buongvao": 3500, "buongdat": 2600, "buongloi": 900, "khoiluong": 80.0, "nongTruong": 1 },
+            { "name": "05/10/2025", "buongvao": 2800, "buongdat": 2100, "buongloi": 700, "khoiluong": 68.0, "nongTruong": 2 },
+            { "name": "05/10/2025", "buongvao": 3150, "buongdat": 2500, "buongloi": 650, "khoiluong": 74.5, "nongTruong": 3 },
+
+            { "name": "06/10/2025", "buongvao": 3600, "buongdat": 2800, "buongloi": 800, "khoiluong": 79.0, "nongTruong": 1 },
+            { "name": "06/10/2025", "buongvao": 3000, "buongdat": 2400, "buongloi": 600, "khoiluong": 70.5, "nongTruong": 2 },
+            { "name": "06/10/2025", "buongvao": 3250, "buongdat": 2700, "buongloi": 550, "khoiluong": 76.0, "nongTruong": 3 },
+
+            { "name": "07/10/2025", "buongvao": 3300, "buongdat": 2600, "buongloi": 700, "khoiluong": 77.5, "nongTruong": 1 },
+            { "name": "07/10/2025", "buongvao": 2900, "buongdat": 2200, "buongloi": 700, "khoiluong": 69.0, "nongTruong": 2 },
+            { "name": "07/10/2025", "buongvao": 3100, "buongdat": 2500, "buongloi": 600, "khoiluong": 73.0, "nongTruong": 3 },
+
+            { "name": "08/10/2025", "buongvao": 3400, "buongdat": 2700, "buongloi": 700, "khoiluong": 78.0, "nongTruong": 1 },
+            { "name": "08/10/2025", "buongvao": 2950, "buongdat": 2250, "buongloi": 700, "khoiluong": 71.0, "nongTruong": 2 },
+            { "name": "08/10/2025", "buongvao": 3200, "buongdat": 2550, "buongloi": 650, "khoiluong": 75.5, "nongTruong": 3 },
+
+            { "name": "09/10/2025", "buongvao": 3550, "buongdat": 2800, "buongloi": 750, "khoiluong": 79.5, "nongTruong": 1 },
+            { "name": "09/10/2025", "buongvao": 3000, "buongdat": 2300, "buongloi": 700, "khoiluong": 72.0, "nongTruong": 2 },
+            { "name": "09/10/2025", "buongvao": 3250, "buongdat": 2600, "buongloi": 650, "khoiluong": 76.5, "nongTruong": 3 },
+
+            { "name": "10/10/2025", "buongvao": 3600, "buongdat": 2850, "buongloi": 750, "khoiluong": 80.0, "nongTruong": 1 },
+            { "name": "10/10/2025", "buongvao": 3100, "buongdat": 2400, "buongloi": 700, "khoiluong": 73.5, "nongTruong": 2 },
+            { "name": "10/10/2025", "buongvao": 3300, "buongdat": 2650, "buongloi": 650, "khoiluong": 77.0, "nongTruong": 3 },
+
+          { "name": "11/10/2025", "buongvao": 4400, "buongdat": 2300, "buongloi": 2100, "khoiluong": 90.0, "nongTruong": 1 },
+          { "name": "11/10/2025", "buongvao": 2400, "buongdat": 1500, "buongloi": 900, "khoiluong": 60.0, "nongTruong": 2 },
+          { "name": "11/10/2025", "buongvao": 3600, "buongdat": 2000, "buongloi": 1600, "khoiluong": 75.0, "nongTruong": 3 },
+
+          { "name": "12/10/2025", "buongvao": 3500, "buongdat": 2100, "buongloi": 1400, "khoiluong": 80.0, "nongTruong": 1 },
+          { "name": "12/10/2025", "buongvao": 3000, "buongdat": 1200, "buongloi": 1800, "khoiluong": 62.0, "nongTruong": 2 },
+          { "name": "12/10/2025", "buongvao": 4200, "buongdat": 2600, "buongloi": 1600, "khoiluong": 85.0, "nongTruong": 3 },
+
+          { "name": "13/10/2025", "buongvao": 4800, "buongdat": 2800, "buongloi": 2000, "khoiluong": 92.0, "nongTruong": 1 },
+          { "name": "13/10/2025", "buongvao": 2600, "buongdat": 1500, "buongloi": 1100, "khoiluong": 65.0, "nongTruong": 2 },
+          { "name": "13/10/2025", "buongvao": 3900, "buongdat": 2400, "buongloi": 1500, "khoiluong": 80.0, "nongTruong": 3 },
+
+          { "name": "14/10/2025", "buongvao": 3200, "buongdat": 1800, "buongloi": 1400, "khoiluong": 78.0, "nongTruong": 1 },
+          { "name": "14/10/2025", "buongvao": 3500, "buongdat": 2000, "buongloi": 1500, "khoiluong": 70.0, "nongTruong": 2 },
+          { "name": "14/10/2025", "buongvao": 4500, "buongdat": 2700, "buongloi": 1800, "khoiluong": 87.0, "nongTruong": 3 },
+
+          { "name": "15/10/2025", "buongvao": 4100, "buongdat": 2200, "buongloi": 1900, "khoiluong": 88.0, "nongTruong": 1 },
+          { "name": "15/10/2025", "buongvao": 2800, "buongdat": 1400, "buongloi": 1400, "khoiluong": 64.0, "nongTruong": 2 },
+          { "name": "15/10/2025", "buongvao": 3700, "buongdat": 2100, "buongloi": 1600, "khoiluong": 82.0, "nongTruong": 3 },
+
+          { "name": "16/10/2025", "buongvao": 4600, "buongdat": 2600, "buongloi": 2000, "khoiluong": 90.0, "nongTruong": 1 },
+          { "name": "16/10/2025", "buongvao": 2500, "buongdat": 1300, "buongloi": 1200, "khoiluong": 60.0, "nongTruong": 2 },
+          { "name": "16/10/2025", "buongvao": 4000, "buongdat": 2300, "buongloi": 1700, "khoiluong": 85.0, "nongTruong": 3 },
+
+          { "name": "17/10/2025", "buongvao": 3800, "buongdat": 2100, "buongloi": 1700, "khoiluong": 83.0, "nongTruong": 1 },
+          { "name": "17/10/2025", "buongvao": 3200, "buongdat": 1800, "buongloi": 1400, "khoiluong": 72.0, "nongTruong": 2 },
+          { "name": "17/10/2025", "buongvao": 4400, "buongdat": 2800, "buongloi": 1600, "khoiluong": 88.0, "nongTruong": 3 },
+
+          { "name": "18/10/2025", "buongvao": 4700, "buongdat": 3000, "buongloi": 1700, "khoiluong": 92.0, "nongTruong": 1 },
+          { "name": "18/10/2025", "buongvao": 2600, "buongdat": 1400, "buongloi": 1200, "khoiluong": 66.0, "nongTruong": 2 },
+          { "name": "18/10/2025", "buongvao": 3900, "buongdat": 2500, "buongloi": 1400, "khoiluong": 80.0, "nongTruong": 3 },
+
+          { "name": "19/10/2025", "buongvao": 4200, "buongdat": 2500, "buongloi": 1700, "khoiluong": 89.0, "nongTruong": 1 },
+          { "name": "19/10/2025", "buongvao": 2800, "buongdat": 1300, "buongloi": 1500, "khoiluong": 70.0, "nongTruong": 2 },
+          { "name": "19/10/2025", "buongvao": 3600, "buongdat": 2200, "buongloi": 1400, "khoiluong": 82.0, "nongTruong": 3 },
+
+          { "name": "20/10/2025", "buongvao": 4800, "buongdat": 3100, "buongloi": 1700, "khoiluong": 94.0, "nongTruong": 1 },
+          { "name": "20/10/2025", "buongvao": 2500, "buongdat": 1200, "buongloi": 1300, "khoiluong": 62.0, "nongTruong": 2 },
+          { "name": "20/10/2025", "buongvao": 4100, "buongdat": 2600, "buongloi": 1500, "khoiluong": 86.0, "nongTruong": 3 },
+               { "name": "21/10/2025", "buongvao": 4500, "buongdat": 2800, "buongloi": 1700, "khoiluong": 90.0, "nongTruong": 1 },
+  { "name": "21/10/2025", "buongvao": 2600, "buongdat": 1400, "buongloi": 1200, "khoiluong": 65.0, "nongTruong": 2 },
+  { "name": "21/10/2025", "buongvao": 3900, "buongdat": 2400, "buongloi": 1500, "khoiluong": 82.0, "nongTruong": 3 },
+
+  { "name": "22/10/2025", "buongvao": 4800, "buongdat": 3100, "buongloi": 1700, "khoiluong": 94.0, "nongTruong": 1 },
+  { "name": "22/10/2025", "buongvao": 2500, "buongdat": 1300, "buongloi": 1200, "khoiluong": 63.0, "nongTruong": 2 },
+  { "name": "22/10/2025", "buongvao": 4200, "buongdat": 2600, "buongloi": 1600, "khoiluong": 85.0, "nongTruong": 3 },
+
+  { "name": "23/10/2025", "buongvao": 4600, "buongdat": 2900, "buongloi": 1700, "khoiluong": 92.0, "nongTruong": 1 },
+  { "name": "23/10/2025", "buongvao": 2700, "buongdat": 1500, "buongloi": 1200, "khoiluong": 66.0, "nongTruong": 2 },
+  { "name": "23/10/2025", "buongvao": 4100, "buongdat": 2500, "buongloi": 1600, "khoiluong": 83.0, "nongTruong": 3 },
+
+  { "name": "24/10/2025", "buongvao": 4700, "buongdat": 3000, "buongloi": 1700, "khoiluong": 93.0, "nongTruong": 1 },
+  { "name": "24/10/2025", "buongvao": 2600, "buongdat": 1400, "buongloi": 1200, "khoiluong": 64.0, "nongTruong": 2 },
+  { "name": "24/10/2025", "buongvao": 4300, "buongdat": 2700, "buongloi": 1600, "khoiluong": 86.0, "nongTruong": 3 },
+
+  { "name": "25/10/2025", "buongvao": 4400, "buongdat": 2800, "buongloi": 1600, "khoiluong": 89.0, "nongTruong": 1 },
+  { "name": "25/10/2025", "buongvao": 2500, "buongdat": 1300, "buongloi": 1200, "khoiluong": 62.0, "nongTruong": 2 },
+  { "name": "25/10/2025", "buongvao": 4000, "buongdat": 2400, "buongloi": 1600, "khoiluong": 84.0, "nongTruong": 3 },
+
+  { "name": "26/10/2025", "buongvao": 4700, "buongdat": 3000, "buongloi": 1700, "khoiluong": 92.0, "nongTruong": 1 },
+  { "name": "26/10/2025", "buongvao": 2700, "buongdat": 1500, "buongloi": 1200, "khoiluong": 66.0, "nongTruong": 2 },
+  { "name": "26/10/2025", "buongvao": 4300, "buongdat": 2700, "buongloi": 1600, "khoiluong": 87.0, "nongTruong": 3 },
+
+  { "name": "27/10/2025", "buongvao": 4500, "buongdat": 2800, "buongloi": 1700, "khoiluong": 90.0, "nongTruong": 1 },
+  { "name": "27/10/2025", "buongvao": 2600, "buongdat": 1400, "buongloi": 1200, "khoiluong": 65.0, "nongTruong": 2 },
+  { "name": "27/10/2025", "buongvao": 4000, "buongdat": 2500, "buongloi": 1500, "khoiluong": 84.0, "nongTruong": 3 },
+
+  { "name": "28/10/2025", "buongvao": 4800, "buongdat": 3100, "buongloi": 1700, "khoiluong": 94.0, "nongTruong": 1 },
+  { "name": "28/10/2025", "buongvao": 2500, "buongdat": 1200, "buongloi": 1300, "khoiluong": 62.0, "nongTruong": 2 },
+  { "name": "28/10/2025", "buongvao": 4200, "buongdat": 2600, "buongloi": 1600, "khoiluong": 86.0, "nongTruong": 3 },
+
+  { "name": "29/10/2025", "buongvao": 4600, "buongdat": 2900, "buongloi": 1700, "khoiluong": 92.0, "nongTruong": 1 },
+  { "name": "29/10/2025", "buongvao": 2700, "buongdat": 1500, "buongloi": 1200, "khoiluong": 66.0, "nongTruong": 2 },
+  { "name": "29/10/2025", "buongvao": 4100, "buongdat": 2500, "buongloi": 1600, "khoiluong": 83.0, "nongTruong": 3 },
+
+  { "name": "30/10/2025", "buongvao": 4700, "buongdat": 3000, "buongloi": 1700, "khoiluong": 93.0, "nongTruong": 1 },
+  { "name": "30/10/2025", "buongvao": 2600, "buongdat": 1400, "buongloi": 1200, "khoiluong": 64.0, "nongTruong": 2 },
+  { "name": "30/10/2025", "buongvao": 4300, "buongdat": 2700, "buongloi": 1600, "khoiluong": 87.0, "nongTruong": 3 },
+
+  { "name": "31/10/2025", "buongvao": 4900, "buongdat": 3200, "buongloi": 1700, "khoiluong": 95.0, "nongTruong": 1 },
+  { "name": "31/10/2025", "buongvao": 2500, "buongdat": 1300, "buongloi": 1200, "khoiluong": 63.0, "nongTruong": 2 },
+  { "name": "31/10/2025", "buongvao": 4400, "buongdat": 2700, "buongloi": 1700, "khoiluong": 88.0, "nongTruong": 3 }     
         ],
         "linechart-chart2": [
           { "name": "01/09/2025", "uv": 1200, "pv": 1500, "amt": 1300 },

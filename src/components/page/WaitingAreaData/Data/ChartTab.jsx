@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DatePicker, Button, Select } from "antd";
+import { DatePicker, Button, Select, Space } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import TableData from "../../khuTramCho/tableData_tramCho";
@@ -9,45 +9,92 @@ import DetailedHarvestData from "../DetailedHarvestData";
 import DataStatistics from "../../khuTramCho/TableTotalData";
 import BananaBunchMassStatisticsChart from "./BananaBunchMassStatisticsChart";
 import BananaBunchQuanlityStatisticsChart from "./BananaBunchQuanlityStatisticsChart";
-
-
+import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
+import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+dayjs.extend(isSameOrAfter);
+dayjs.extend(isSameOrBefore);
+const { RangePicker } = DatePicker;
 
 const ChartTab = ({ data }) => {
   const [selectedFarm, setSelectedFarm] = useState("1");
-const [chartData, setChartData] = useState(null);
-const [farmOptions, setFarmOptions] = useState([]);
-const location = useLocation();
-const path = location.pathname;
+  const [chartData, setChartData] = useState(null);
+  const [farmOptions, setFarmOptions] = useState([]);
+   const [filteredData, setFilteredData] = useState([]);
+  const [dateRange, setDateRange] = useState([
+    dayjs().subtract(7, "day"), // mặc định 7 ngày gần nhất
+    dayjs(),
+  ]);
+  const location = useLocation();
+  const path = location.pathname;
 
-const xuongIdMap = {
-  "xuong-bp1-1": 1,
-  "xuong-bp1-2": 2,
-};
-const xuongSlug = path.split("/").find((p) => p.startsWith("xuong-"));
-const xuongId = xuongIdMap[xuongSlug] || 1;
+  const xuongIdMap = {
+    "xuong-bp1-1": 1,
+    "xuong-bp1-2": 2,
+  };
+  const xuongSlug = path.split("/").find((p) => p.startsWith("xuong-"));
+  const xuongId = xuongIdMap[xuongSlug] || 1;
 
-const handleChange = (value) => {
-  setSelectedFarm(value.value);
-};
-
-useEffect(() => {
-  const fetchChartData = async () => {
-    try {
-      const res = await api.get("/tram-cho/bieu-do", {
-        params: {
-          nongTruong: selectedFarm,
-          xuong_id: xuongId,
-        },
-      });
-      console.log("✅ Chart data:", res.data);
-      setChartData(res.data.data);
-    } catch (error) {
-      console.error("❌ Error fetching chart data:", error);
+  const handleChange = (value) => {
+    setSelectedFarm(value.value);
+  };
+  const handleDateChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setDateRange(dates);
     }
   };
 
-  fetchChartData();
-}, [selectedFarm, xuongId]);
+  // useEffect(() => {
+  //   const fetchChartData = async () => {
+  //     try {
+  //       const res = await api.get("/tram-cho/bieu-do", {
+  //         params: {
+  //           nongTruong: selectedFarm,
+  //           xuong_id: xuongId,
+  //           startDate: dateRange[0].format("YYYY-MM-DD"),
+  //           endDate: dateRange[1].format("YYYY-MM-DD"),
+  //         },
+  //       });
+  //       console.log("✅ Chart data:", res.data);
+  //       setChartData(res.data.data);
+  //     } catch (error) {
+  //       console.error("❌ Error fetching chart data:", error);
+  //     }
+  //   };
+
+  //   fetchChartData();
+  // }, [selectedFarm, xuongId, dateRange]);
+  useEffect(() => {
+    if (data && data["linechart-chart1"]) {
+      const uniqueFarms = Array.from(
+        new Set(data["linechart-chart1"].map((item) => item.nongTruong))
+      );
+      const options = uniqueFarms.map((val) => ({
+        value: val,
+        label: `Nông trường ${val}`,
+      }));
+      setFarmOptions(options);
+      if (!selectedFarm && options.length > 0) {
+        setSelectedFarm(options[0].value);
+      }
+    }
+  }, [data]);
+  useEffect(() => {
+  if (!data || !data["linechart-chart1"]) return;
+
+  const filtered = data["linechart-chart1"].filter((item) => {
+    const itemDate = dayjs(item.name, "DD/MM/YYYY", true);
+    if (!itemDate.isValid()) return false; // bỏ qua các ngày không hợp lệ
+
+    return (
+      item.nongTruong === selectedFarm &&
+      itemDate.isSameOrAfter(dateRange[0], "day") &&
+      itemDate.isSameOrBefore(dateRange[1], "day")
+    );
+  });
+
+  setFilteredData(filtered);
+}, [data, selectedFarm, dateRange]);
+
   return (
     <div className="w-full h-[51rem]">
       <div className="h-[22rem] w-full flex flex-col gap-1 items-center ">
@@ -57,8 +104,13 @@ useEffect(() => {
             <div>
               <Select
                 labelInValue
-                defaultValue={
-                  farmOptions[0] || { value: "1", label: "Nông trường 1" }
+                value={
+                  selectedFarm
+                    ? {
+                        value: selectedFarm,
+                        label: `Nông trường ${selectedFarm}`,
+                      }
+                    : null
                 }
                 style={{ width: 150 }}
                 onChange={handleChange}
@@ -66,7 +118,15 @@ useEffect(() => {
               />
             </div>
             <div>
-              <DatePicker  defaultValue={dayjs()} />
+              <Space direction="vertical" size={12}>
+                <RangePicker
+                  format="YYYY-MM-DD"
+                  value={dateRange}
+                  onChange={handleDateChange}
+                  allowClear={false}
+                  style={{ width: 220 }}
+                />
+              </Space>
             </div>
           </div>
           <div></div>
@@ -76,9 +136,7 @@ useEffect(() => {
             Thống kê khối lượng buồng thu hoạch theo ngày
           </div>
 
-          <BananaBunchMassStatisticsChart
-            data={chartData?.["linechart-chart1"]}
-          />
+          <BananaBunchMassStatisticsChart data={filteredData} />
         </div>
       </div>
       <div className="h-[26rem] w-full flex flex-col px-[0.4rem]   ">
@@ -108,7 +166,7 @@ useEffect(() => {
           </div>
           <div className="flex justify-center items-center h-[26rem] w-full  ">
             <BananaBunchQuanlityStatisticsChart
-              data={data["linechart-chart2"]}
+              data={filteredData}
             />
           </div>
         </div>

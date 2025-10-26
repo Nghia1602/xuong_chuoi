@@ -9,9 +9,21 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import React from "react";
-const data = [{ Kehoach: 100, Thucte: 98.26 }];
+// const data = [{ Kehoach: 100, Thucte: 98.26 }];
 
-const Barchart_thongke = (props) => {
+const Barchart_thongke = ({chartData}) => {
+  console.log("chartData barchart thongke111:",chartData);
+  const  ChartData1=chartData[0];
+  const kehoach = (ChartData1.Kehoach/ChartData1.Kehoach*100).toFixed(2);
+  const thucte = (ChartData1.Thucte/ChartData1.Kehoach*100).toFixed(2);
+  console.log("ChartData1 barchart thongke:",ChartData1);
+  const data = [{
+    Kehoach:kehoach,
+    Thucte:thucte
+  }]
+  console.log("Kehoach:",chartData.Kehoach);
+  console.log("Thucte:",chartData.Thucte);
+  console.log("data barchart thongke:",data);
   return (
     <div
       style={{

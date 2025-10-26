@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useMemo } from "react";
 import DonutChart_khomat_gsc from "./donutchart_khomat_gsc";
 const Khomat_gsc = (props) => {
-  const data1 = [
+  const data1_1 = [
     { name: "Nhật Bản", value: 1158 },
     { name: "Trung Quốc", value: 342 },
   ];
-
-  const data2 = [
+ const data1_2 = [
+    { name: "Nhật Bản", value: 1045 },
+    { name: "Trung Quốc", value: 115 },
+  ];
+  const data2_1 = [
     { name: "Nhật Bản", value: 760 },
     { name: "Trung Quốc", value: 230 },
   ];
+  const data2_2 = [
+    { name: "Nhật Bản", value: 1070 },
+    { name: "Trung Quốc", value: 110 },
+  ];
 
-  const data3 = [
+  const data3_1 = [
     { name: "Nhật Bản", value: 833 },
     { name: "Trung Quốc", value: 167 },
   ];
-
+  const data3_2 = [
+    { name: "Nhật Bản", value: 1500 },
+    { name: "Trung Quốc", value: 330 },
+  ];
+  const currentURL = window.location.href;
+  const xuong = useMemo(() => {
+    if (currentURL.includes("bp1-1")) return "bp1-1";
+    if (currentURL.includes("bp1-2")) return "bp1-2";
+  });
+  const data1=xuong === "bp1-1"?data1_1:data1_2;
+  const data2=xuong === "bp1-1"?data2_1:data2_2;
+  const data3=xuong === "bp1-1"?data3_1:data3_2;
   return (
     <div
       style={{
@@ -54,8 +72,8 @@ const Khomat_gsc = (props) => {
       >
         <div
           style={{
-            display:"flex",
-            flex:1,//623px //623px
+            display: "flex",
+            flex: 1, //623px //623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
@@ -95,8 +113,8 @@ const Khomat_gsc = (props) => {
         {/* ----------------------Nhật Bản ----------------- */}
         <div
           style={{
-            display:"flex",
-            flex:1,//623px
+            display: "flex",
+            flex: 1, //623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
@@ -136,15 +154,15 @@ const Khomat_gsc = (props) => {
         {/* ----------------------Trung Quốc ----------------- */}
         <div
           style={{
-            display:"flex",
-            flex:1,//623px //623px
+            display: "flex",
+            flex: 1, //623px //623px
             height: 218, //218px
             // border: "1px solid red",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            
+
             boxSizing: "border-box",
           }}
         >

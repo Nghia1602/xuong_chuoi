@@ -34,6 +34,7 @@ const dataChinaBP1_2 = [
   { code: "CL", value: 340 },
   { code: "CP", value: 190 },
 ];
+
 const Khudonggoi_gsc = (props) => {
   const currentUrl = window.location.href;
   const xuong = useMemo(() => {
@@ -41,12 +42,25 @@ const Khudonggoi_gsc = (props) => {
     if (currentUrl.includes("bp1-2")) return "bp1-2";
     return "unknown";
   }, [currentUrl]);
-
+  const keHoachBP1_2 = 3356;
+  const keHoachBP1_1 = 4528;
+  
   // 🔹 Chọn dữ liệu tương ứng
   const japanData = xuong === "bp1-2" ? japanDataBP1_2 : japanDataBP1_1;
   const chinaData = xuong === "bp1-2" ? dataChinaBP1_2 : dataChinaBP1_1;
   const totalJapan = japanData.reduce((sum, item) => sum + item.value, 0);
   const totalChina = chinaData.reduce((sum, item) => sum + item.value, 0);
+  const tongThungKeHoach = xuong === "bp1-1" ? keHoachBP1_1 : keHoachBP1_2;
+  const thungDathuocBP1_1 = 2789;
+  const thungDathuocBP1_2 = 2300;
+  const thungDat = xuong === "bp1-1" ? thungDathuocBP1_1 : thungDathuocBP1_2;
+  const thungLoiBP1_1 = totalJapan + totalChina - thungDathuocBP1_1;
+  const thungLoiBP1_2 = totalJapan + totalChina - thungDathuocBP1_2;
+  const thungLoi = xuong === "bp1-1" ? thungLoiBP1_1 : thungLoiBP1_2;
+  const chartData = [
+    { Kehoach: tongThungKeHoach, Thucte: totalJapan + totalChina }
+  ]
+  console.log("chartData khudonggoi_gsc:",chartData);
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div
@@ -151,7 +165,7 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    3110
+                    {tongThungKeHoach}
                   </div>
                   <div
                     style={{
@@ -180,7 +194,7 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    3056
+                    {totalJapan + totalChina}
                   </div>
                   <div
                     style={{
@@ -209,7 +223,7 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    -54
+                    {totalJapan + totalChina - tongThungKeHoach}
                   </div>
                   <div
                     style={{
@@ -272,7 +286,7 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    3000
+                    {thungDat}
                   </div>
                 </div>
                 <div
@@ -309,13 +323,13 @@ const Khudonggoi_gsc = (props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    56
+                   { thungLoi}
                   </div>
                 </div>
               </div>
             </div>
             <div style={{ width: "40.67%", height: "100%" }}>
-              <Barchart_thongke />
+              <Barchart_thongke  chartData={chartData}/>
             </div>
           </div>
         </div>
@@ -386,7 +400,10 @@ const Khudonggoi_gsc = (props) => {
                   alignItems: "center",
                 }}
               >
-                Tổng: <strong style={{ marginLeft: 5, color: "#FFD441" }}>{totalJapan}</strong>
+                Tổng:{" "}
+                <strong style={{ marginLeft: 5, color: "#FFD441" }}>
+                  {totalJapan}
+                </strong>
               </div>
             </div>
 
@@ -420,7 +437,6 @@ const Khudonggoi_gsc = (props) => {
                       justifyContent: "center",
                       background: "#DADADA",
                       borderRadius: "4px 4px 0 0",
-                      
                     }}
                   >
                     {item.label}
@@ -436,7 +452,6 @@ const Khudonggoi_gsc = (props) => {
                       boxSizing: "border-box",
                       borderRadius: "0 0 4px 4px",
                       color: "#FFD441",
-                      
                     }}
                   >
                     {item.value}
@@ -512,7 +527,7 @@ const Khudonggoi_gsc = (props) => {
                 }}
               >
                 Tổng:{" "}
-                <strong style={{ marginLeft: 5, color:"#BB0E3D" }}>
+                <strong style={{ marginLeft: 5, color: "#BB0E3D" }}>
                   {totalChina}
                 </strong>
               </div>
@@ -563,7 +578,6 @@ const Khudonggoi_gsc = (props) => {
                       boxSizing: "border-box",
                       borderRadius: "0 0 4px 4px",
                       color: "#BB0E3D",
-
                     }}
                   >
                     {item.value}
