@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// const data = [//   {
+
 //     name: "1",
 //     uv: 4000,
 //     pv: 2400,

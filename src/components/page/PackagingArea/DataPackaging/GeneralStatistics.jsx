@@ -28,6 +28,7 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
     "xuong-bp1-1": 1,
     "xuong-bp1-2": 2,
   };
+  
 
   // 🔹 Tự động lấy slug trong URL (vd: /xuong-bp1-1/bao-cao)
   const xuongSlug = path.split("/").find((p) => p.startsWith("xuong-"));
@@ -267,6 +268,7 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
         {/* //h-[22.5rem] */}
         <div className="h-[2.5rem] w-[100%] flex">
           <div className="flex gap-[0.25rem] pl-[0.4rem] pt-[0.4rem]">
+            
             <div>
               <DatePicker onChange={onChange} value={dayjs()} />
             </div>
