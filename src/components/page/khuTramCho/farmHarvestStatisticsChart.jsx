@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  Chart as ChartJS,
+  Chart as ChartJS, // 👈 phải import đây
   BarElement,
   LineElement,
   CategoryScale,
@@ -9,9 +9,7 @@ import {
   Legend,
   Tooltip,
 } from "chart.js";
-import { Chart } from "react-chartjs-2";
-import { Empty } from "antd";
-import { Label } from "recharts";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 ChartJS.register(
   BarElement,
   LineElement,
@@ -19,8 +17,14 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Legend,
-  Tooltip
-);
+  Tooltip,
+  ChartDataLabels // 👈 phải đăng ký plugin ở đây
+);                                                                                    
+import { Chart } from "react-chartjs-2";
+import { Empty } from "antd";
+import { Label } from "recharts";
+
+
 
 // Giả sử bạn import JSON vào (hoặc fetch nếu file ngoài)
 
@@ -72,6 +76,14 @@ const FarmHarvestStatisticsChart = ({ data }) => {
       borderRadius: isLine ? 0 : 4,
       barThickness: isLine ? undefined : 20,
       order: isLine ? 1 : 2,
+      datalabels: {
+        // thêm cấu hình riêng dataset nếu muốn
+        anchor: "end",
+        align: "start",
+        color: "#000",
+        font: { weight: "medium" },
+        display: !isLine, // chỉ hiện cho bar
+      },
     };
   });
   const chartData = {
@@ -90,6 +102,12 @@ const FarmHarvestStatisticsChart = ({ data }) => {
     scales: {
       x: {
         grid: { display: false },
+        ticks: {
+          drawTicks: false,
+        },
+        barPercentage: 0.8,
+        categoryPercentage: 0.6,
+
         // title: {
         //   display: true,
         //   // text: "Nông trường",
@@ -110,6 +128,9 @@ const FarmHarvestStatisticsChart = ({ data }) => {
           text: "Số buồng",
         },
         grid: { drawOnChartArea: true },
+        ticks: {
+          drawTicks: false,
+        },
       },
       y1: {
         type: "linear",
@@ -122,6 +143,22 @@ const FarmHarvestStatisticsChart = ({ data }) => {
     },
     plugins: {
       legend: { position: "top" },
+      datalabels: {
+        display: true,
+        color: "#000",
+        anchor: "end",
+        align: "start",
+        offset: -20,
+        font: {
+          size: 11,
+          weight: "medium",
+        },
+        formatter: function (value, context) {
+          // chỉ hiển thị cho bar
+          return context.dataset.type === "bar" ? value : null;
+        },
+        
+      },
     },
   };
 

@@ -28,9 +28,9 @@ const ActualVsPlannedBoxQuantity = ({ data }) => {
             }}
             barGap={2}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <CartesianGrid  vertical={false} />
+            <XAxis dataKey="name" tickLine={false}/>
+            <YAxis tickLine={false} />
             <Tooltip />
             <Legend
               layout="horizontal"

@@ -25,14 +25,14 @@ export default function BananaBunchQuanlityStatisticsChart({data}) {
               bottom: 10, // Tăng khoảng cách để Legend không bị đè
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <CartesianGrid  vertical={false} />
+            <XAxis dataKey="name" tickLine={false}/>
+            <YAxis tickLine={false} />
             <Tooltip />
             <Legend
               layout="horizontal"
               verticalAlign="top"
-              align="right"
+              align="center"
               payload={[
                 { value: "Buồng đầu vào", type: "line", color: "#d4cb73ff" },
                 { value: "Buồng đạt", type: "line", color: "#48c748ff" },

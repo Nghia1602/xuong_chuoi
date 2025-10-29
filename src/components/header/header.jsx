@@ -8,7 +8,7 @@ import SubMenuXuong from "../submenu/sub_menu.jsx";
 import Menu1 from "../submenu/submenu2.jsx";
 import { Link, useLocation } from "react-router-dom";
 
-const Header = ({ location, onLoginClick, user }) => {
+const Header = ({ location, onLoginClick, user, onLogout }) => {
   const locationMenu = useLocation();
   const { khu, xuong } = location;
   console.log("location", location);
@@ -32,6 +32,14 @@ const Header = ({ location, onLoginClick, user }) => {
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
     const location = useLocation();
+  };
+  const [showLogout, setShowLogout] = useState(false);
+  const handleUserClick = () => {
+    if (user) {
+      setShowLogout(!showLogout);
+    } else {
+      onLoginClick();
+    }
   };
   return (
     <div className="flex items-center justify-center bg-[#398640]">
@@ -139,11 +147,22 @@ const Header = ({ location, onLoginClick, user }) => {
                 position: "relative",
               }}
             >
-              <Link to={"/"} className={ locationMenu.pathname === "/" ? "font-bold text-yellow-300 text-center" : "text-center" }>
+              <Link
+                to={"/"}
+                className={
+                  locationMenu.pathname === "/"
+                    ? "font-bold text-yellow-300 text-center"
+                    : "text-center"
+                }
+              >
                 Trang chủ
               </Link>
               <div
-                className={locationMenu.pathname.includes("/xuong")?"xuong flex justify-center items-center font-bold text-yellow-500 ":"xuong flex justify-center items-center "}
+                className={
+                  locationMenu.pathname.includes("/xuong")
+                    ? "xuong flex justify-center items-center font-bold text-yellow-500 "
+                    : "xuong flex justify-center items-center "
+                }
                 style={{
                   position: "relative",
                   // color: "red",
@@ -170,7 +189,9 @@ const Header = ({ location, onLoginClick, user }) => {
                 {/* <SubMenuXuong /> */}
               </div>
 
-              <div className="text-center cursor-pointer">Hướng dẫn sử dụng</div>
+              <div className="text-center cursor-pointer">
+                Hướng dẫn sử dụng
+              </div>
               <div className="text-center cursor-pointer">Liên hệ</div>
             </div>
 
@@ -274,7 +295,7 @@ const Header = ({ location, onLoginClick, user }) => {
                       cursor: "pointer",
                       height: "1.25rem",
                     }}
-                    onClick={onLoginClick}
+                    onClick={handleUserClick}
                   >
                     <i
                       className="fa-regular fa-user"
@@ -290,6 +311,23 @@ const Header = ({ location, onLoginClick, user }) => {
                       }}
                     ></i>
                   </div>
+                  {user && showLogout && (
+                    <div
+                      onClick={() => {
+                        setShowLogout(false);
+                        onLogout();
+                      }}
+                      style={{
+                        position:"absolute",
+                        background:"white",
+                        cursor:"pointer",
+                        width:130,
+                        height:40,
+                        fontWeight:"500",
+                        top:"120%",
+                      }}
+                    >Đăng suất</div>
+                  )}
                 </div>
               </div>
             </div>

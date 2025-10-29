@@ -15,6 +15,16 @@ import { SettingOutlined } from "@ant-design/icons";
 import { Checkbox } from "antd";
 import { Bar } from "react-chartjs-2";
 
+import {
+  BarChart,
+  Bar as ReBar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 // const onChange = (date, dateString) => {
 //   setStartDate(dateString);
 // };
@@ -28,7 +38,6 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
     "xuong-bp1-1": 1,
     "xuong-bp1-2": 2,
   };
-  
 
   // 🔹 Tự động lấy slug trong URL (vd: /xuong-bp1-1/bao-cao)
   const xuongSlug = path.split("/").find((p) => p.startsWith("xuong-"));
@@ -262,13 +271,22 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
       setSelectedModules(modules);
     }
   }, [dataTable]);
+  const rechartsData = useMemo(() => {
+    return dataTable
+      .filter((d) => selectedModules.includes(d.module))
+      .map((d) => ({
+        module: d.module,
+        tongThungChina: d.tongThungChina || 0,
+        tongThungJapan: d.tongThungJapan || 0,
+        thungLoiLuyKe: d.thungLoiLuyKe || 0,
+      }));
+  }, [dataTable, selectedModules]);
   return (
-    <div className="w-full h-full flex flex-col items-center gap-3 ">
+    <div className="w-full h-[52rem] flex flex-col items-center gap-3 ">
       <div className=" w-full flex flex-col gap-1 items-center">
         {/* //h-[22.5rem] */}
         <div className="h-[2.5rem] w-[100%] flex">
           <div className="flex gap-[0.25rem] pl-[0.4rem] pt-[0.4rem]">
-            
             <div>
               <DatePicker onChange={onChange} value={dayjs()} />
             </div>
@@ -345,7 +363,7 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
                     <th className="p-2 bg-[#82BA11]">Giờ làm</th>
                     <th className="p-2 bg-[#82BA11]">Năng suất</th>
                     <th className="p-2 bg-[#82BA11]">Thùng lỗi</th>
-                    <th className="p-2 bg-[#95B7F9]">Thùng đạt</th>
+                    <th className="p-2 bg-[#95B7F9]">Thùng đạt chuẩn</th>
                     <th className="p-2 bg-[#95B7F9]">Thùng lỗi</th>
                   </tr>
                 </thead>
@@ -410,8 +428,41 @@ const GeneralStatisticsPackaging = ({ rawDataTable, dataTongCong, data }) => {
       </div>
       <div className=" flex flex-1 flex-col w-[99.5%]">
         <Title title="Thống kê sản lượng line đóng gói" />
-        <div className="h-[90%]">
-          <Bar key={key} data={dataChart} options={optionsChart} />
+        <div className="flex-1">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={rechartsData}
+              margin={{ top: 16, right: 30, left: -10, bottom: 8 }}
+            >
+              <CartesianGrid  />
+              <XAxis dataKey="module"  tickLine={false}/>
+              <YAxis tickLine={false}/>
+              <Tooltip />
+              <Legend
+                layout="horizontal"
+                verticalAlign="top"
+                align="center"
+                wrapperStyle={{ paddingLeft: 20, paddingRight: 20 }}
+                radius={[6, 6, 0, 0]}
+              />
+              <ReBar
+                dataKey="tongThungChina"
+                stackId="a"
+                name="Thùng Trung Quốc"
+                fill="#FCD617"
+                radius={[6, 6, 0, 0]}
+              />
+              <ReBar
+                dataKey="tongThungJapan"
+                stackId="a"
+                name="Thùng Nhật Bản"
+                fill="#82BA11"
+                radius={[6, 6, 0, 0]}
+              />
+              <ReBar dataKey="thungLoiLuyKe" name="Thùng lỗi" fill="#da070780" />
+            </BarChart>
+          </ResponsiveContainer>
+          {/* <Bar key={key} data={dataChart} options={optionsChart} /> */}
         </div>
       </div>
     </div>

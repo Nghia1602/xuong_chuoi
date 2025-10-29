@@ -26,14 +26,14 @@ export default function BananaBunchMassStatisticsChart({data}) {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid  vertical={false}/>
+        <XAxis dataKey="name" tickLine={false}/>
+        <YAxis tickLine={false}/>
         <Tooltip />
         <Legend
           layout="horizontal"
           verticalAlign="top"
-          align="right"
+          align="center"
           payload={[
             { value: "Khối lượng (tấn)", type: "line", color: "#53b5ceff" },
           ]}

@@ -4,11 +4,12 @@ import { DownloadOutlined } from "@ant-design/icons";
 import TableData from "../../khuTramCho/tableData_tramCho";
 import DataStatistics from "../../khuTramCho/TableTotalData";
 import DetailedHarvestData from "../../WaitingAreaData/DetailedHarvestData";
-import ActualVsPlannedBoxQuantity from "./ActualVsPlannedBoxQuantity";
+import ActualVsPlannedBoxQuantity from "./ActualVsPlannedBoxQuantityPlanning";
 import dayjs from "dayjs";
 
 const onChange = (date, dateString) => {
   setStartDate(dateString);
+  
 };
 const PlanningPackaging = ({ rawDataTable, dataTongCong, data }) => {
   return (

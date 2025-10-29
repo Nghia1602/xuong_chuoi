@@ -16,10 +16,10 @@ dayjs.extend(isSameOrBefore);
 const { RangePicker } = DatePicker;
 
 const ChartTab = ({ data }) => {
-  const [selectedFarm, setSelectedFarm] = useState("1");
+  const [selectedFarm, setSelectedFarm] = useState(null);
   const [chartData, setChartData] = useState(null);
   const [farmOptions, setFarmOptions] = useState([]);
-   const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [dateRange, setDateRange] = useState([
     dayjs().subtract(7, "day"), // mặc định 7 ngày gần nhất
     dayjs(),
@@ -74,26 +74,26 @@ const ChartTab = ({ data }) => {
       }));
       setFarmOptions(options);
       if (!selectedFarm && options.length > 0) {
-        setSelectedFarm(options[0].value);
+        setSelectedFarm(options[0].value);                              
       }
     }
   }, [data]);
   useEffect(() => {
-  if (!data || !data["linechart-chart1"]) return;
+    if (!data || !data["linechart-chart1"]|| !selectedFarm) return;
 
-  const filtered = data["linechart-chart1"].filter((item) => {
-    const itemDate = dayjs(item.name, "DD/MM/YYYY", true);
-    if (!itemDate.isValid()) return false; // bỏ qua các ngày không hợp lệ
+    const filtered = data["linechart-chart1"].filter((item) => {
+      const itemDate = dayjs(item.name, "DD/MM/YYYY", true);
+      if (!itemDate.isValid()) return false; // bỏ qua các ngày không hợp lệ
 
-    return (
-      item.nongTruong === selectedFarm &&
-      itemDate.isSameOrAfter(dateRange[0], "day") &&
-      itemDate.isSameOrBefore(dateRange[1], "day")
-    );
-  });
+      return (
+        item.nongTruong === selectedFarm &&
+        itemDate.isSameOrAfter(dateRange[0], "day") &&
+        itemDate.isSameOrBefore(dateRange[1], "day")
+      );
+    });
 
-  setFilteredData(filtered);
-}, [data, selectedFarm, dateRange]);
+    setFilteredData(filtered);
+  }, [data, selectedFarm, dateRange]);
 
   return (
     <div className="w-full h-[51rem]">
@@ -140,34 +140,12 @@ const ChartTab = ({ data }) => {
         </div>
       </div>
       <div className="h-[26rem] w-full flex flex-col px-[0.4rem]   ">
-        {/* <div className="flex gap-[0.25rem]  h-[2.5rem] w-[99%] flex  ">
-          <div>
-            <Select
-              labelInValue
-              defaultValue={{ value: "1", label: "Nông trường 1 " }}
-              style={{ width: 150 }}
-              onChange={handleChange}
-              options={[
-                { value: "1", label: "Nông trường 1" },
-                { value: "2", label: "Nông trường 2" },
-                { value: "3", label: "Nông trường 12" },
-              ]}
-            />
-          </div>
-          <div>
-            <Button type="primary" icon={<DownloadOutlined />}>
-              Báo cáo
-            </Button>
-          </div>
-        </div> */}
         <div className="flex flex-col items-center ">
           <div className="flex justify-center items-center h-[2.1875rem] bg-[#c6c6c6] w-full rounded-t-[5px]">
             Chi tiết dữ liệu thu hoạch từng nông trường{" "}
           </div>
           <div className="flex justify-center items-center h-[26rem] w-full  ">
-            <BananaBunchQuanlityStatisticsChart
-              data={filteredData}
-            />
+            <BananaBunchQuanlityStatisticsChart data={filteredData} />
           </div>
         </div>
       </div>

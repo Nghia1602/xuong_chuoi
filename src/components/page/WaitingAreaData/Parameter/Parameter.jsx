@@ -265,7 +265,7 @@ const Parameter = () => {
           </div>
           <div className="flex justify-center items-center h-[26rem] w-full overflow-hidden">
             <DetailedHarvestData
-              rawData={data?.data} // hoặc rawDataTable nếu bạn muốn hiển thị theo bảng có sẵn
+              rawData={data?.data} 
               selectedFarm={selectedFarm}
             />
           </div>
